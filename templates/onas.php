@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>23 Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <script src="static/script.js"></script>
+    <script src="../static/script.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="static/images/logo.jpeg" alt="Logo firmy 23 solutions">
+            <img src="../static/images/logo.jpeg" alt="Logo firmy 23 solutions">
         </div>
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
-          <a href="index.php" class="topnav_a">Home</a>
+          <a href="../index.php" class="topnav_a">Home</a>
           <a href="onas.php" class="topnav_a">O nas</a>
           <a href="szkolenia.php" class="topnav_a">Szkolenia</a>
           <a href="kontakt.php" class="topnav_a">Kontakt</a>
@@ -26,17 +26,57 @@
       </nav>
     </header>
 
-    <section class="hero_short">
-        <h1>Szkolenie</h1>
+    <section class="hero_short" style="background-image: url('../static/images/hero_onas.jpg')">
+        <h1>Poznaj nas lepiej</h1>
 
     </section>
+
+    <div class="p1">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </div>
+
+
+    <div class="osoby">
+        <div class="osoba">
+            <div class="osoba_img" style="background-image: url('../static/images/pracownik1.jpg')">
+
+            </div>
+            <h3>Akshara Banerjee</h3>
+            <div class="osoba_opis">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </div>
+
+        </div>
+
+        <div class="osoba">
+            <div class="osoba_img" style="background-image: url('../static/images/pracownik2.jpg')">
+            </div>
+            <h3>Jakub Szczepański</h3>
+            <div class="osoba_opis">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </div>
+
+        </div>
+
+        <div class="osoba">
+            <div class="osoba_img" style="background-image: url('../static/images/pracownik3.jpg')">
+
+            </div>
+            <h3>Anastazja Kołowrotek</h3>
+            <div class="osoba_opis">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </div>
+        </div>
+
+    </div>
+
 
     <footer>
       <div class="top">
         <div class="pages">
           <ul>
             <h3>23 Solutions</h3>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li><a href="onas.php">O nas</a></li>
             <li><a href="szkolenia.php">Szkolenia</a></li>
             <li><a href="kontakt.php">Kontakt</a></li>
@@ -68,7 +108,7 @@
       </div>
       <div class="info">
         <div class="legal">
-          <a href="regulamin.txt" target="_blank">Regulamin</a><a href="polityka.txt" target="_blank">Polityka prywatności</a>
+          <a href="../regulamin.txt" target="_blank">Regulamin</a><a href="../polityka.txt" target="_blank">Polityka prywatności</a>
         </div>
         <div class="copyright">2024 Copyright &copy; 23 Solutions</div>
       </div>

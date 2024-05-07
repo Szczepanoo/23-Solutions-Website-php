@@ -19,10 +19,10 @@
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
           <a href="index.php" class="topnav_a">Home</a>
-          <a href="onas.php" class="topnav_a">O nas</a>
-          <a href="szkolenia.php" class="topnav_a">Szkolenia</a>
-          <a href="kontakt.php" class="topnav_a">Kontakt</a>
-          <a href="logowanie.php" class="topnav_a">Logowanie</a>
+          <a href="templates/onas.php" class="topnav_a">O nas</a>
+          <a href="templates/szkolenia.php" class="topnav_a">Szkolenia</a>
+          <a href="templates/kontakt.php" class="topnav_a">Kontakt</a>
+          <a href="templates/logowanie.php" class="topnav_a">Logowanie</a>
       </nav>
     </header>
 
@@ -67,22 +67,22 @@
           <ul>
             <h3>23 Solutions</h3>
             <li><a href="index.php">Home</a></li>
-            <li><a href="onas.php">O nas</a></li>
-            <li><a href="szkolenia.php">Szkolenia</a></li>
-            <li><a href="kontakt.php">Kontakt</a></li>
-            <li><a href="logowanie.php">Logowanie</a></li>
+            <li><a href="templates/onas.php">O nas</a></li>
+            <li><a href="templates/szkolenia.php">Szkolenia</a></li>
+            <li><a href="templates/kontakt.php">Kontakt</a></li>
+            <li><a href="templates/logowanie.php">Logowanie</a></li>
           </ul>
           <ul>
             <h3>Najczęściej odwiedzane</h3>
-            <li><a href="onas.php">Poznaj nasz zespół</a></li>
-            <li><a href="szkolenie.php">Kalendarz dostępnych terminów</a></li>
-            <li><a href="szkolenia.php">Dostępne szkolenia</a></li>
-            <li><a href="kontakt.php">Kontakt</a></li>
+            <li><a href="templates/onas.php">Poznaj nasz zespół</a></li>
+            <li><a href="templates/szkolenie.php">Kalendarz dostępnych terminów</a></li>
+            <li><a href="templates/szkolenia.php">Dostępne szkolenia</a></li>
+            <li><a href="templates/kontakt.php">Kontakt</a></li>
           </ul>
         </div>
         <div class="newsletter">
           <h3>Zapisz się na newsletter</h3>
-          <form action="sign_for_newsletter.php" method="POST" id="bottom">
+          <form action="templates/sign_for_newsletter.php" method="POST" id="bottom">
               <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required aria-label="E-mail"/>
               <input type="submit" value="<?php echo isset($_GET['signed_successful']) ? 'Dziękujemy' : (isset($_GET['signed_error']) ? 'Błąd' : 'Wyślij');?>"/>
               <input type="hidden" name="return_url" value="<?php echo basename($_SERVER['PHP_SELF'])?>">
