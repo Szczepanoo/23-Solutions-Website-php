@@ -17,7 +17,7 @@
         </div>
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
-          <a href="index.html" class="topnav_a">Home</a>
+          <a href="index.php" class="topnav_a">Home</a>
           <a href="onas.html" class="topnav_a">O nas</a>
           <a href="szkolenia.html" class="topnav_a">Szkolenia</a>
           <a href="kontakt.php" class="topnav_a">Kontakt</a>
@@ -81,9 +81,9 @@
         </div>
         <div class="newsletter">
           <h3>Zapisz się na newsletter</h3>
-          <form>
-            <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required/>
-            <input type="submit" value="Wyślij"/>
+          <form action="sign_for_newsletter.php" method="POST" id="bottom">
+              <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required/>
+              <input type="submit" value="<?php echo isset($_GET['signed_successful']) ? 'Zapisano' : (isset($_GET['signed_error']) ? 'Błąd' : 'Wyślij');?>"/>
           </form>
         </div>
       </div>

@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
         </div>
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
-            <a href="index.html" class="topnav_a">Home</a>
+            <a href="index.php" class="topnav_a">Home</a>
             <a href="onas.html" class="topnav_a">O nas</a>
             <a href="szkolenia.html" class="topnav_a">Szkolenia</a>
             <a href="kontakt.php" class="topnav_a">Kontakt</a>
