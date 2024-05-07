@@ -9,11 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="static/script.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="static/images/logo.jpeg" alt="Logo firmy 23 solutions" width="100px" height="100px">
+            <img src="static/images/logo.jpeg" alt="Logo firmy 23 solutions">
         </div>
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
@@ -65,30 +66,30 @@
         <div class="pages">
           <ul>
             <h3>23 Solutions</h3>
-            <li><a href="{{ url_for('render_index') }}">Home</a></li>
-            <li><a href="{{ url_for('render_onas') }}">O nas</a></li>
-            <li><a href="{{ url_for('render_szkolenia') }}">Szkolenia</a></li>
-            <li><a href="{{ url_for('render_kontakt') }}">Kontakt</a></li>
-            <li><a href="{{ url_for('render_logowanie') }}">Logowanie</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="onas.php">O nas</a></li>
+            <li><a href="szkolenia.php">Szkolenia</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
+            <li><a href="logowanie.php">Logowanie</a></li>
           </ul>
           <ul>
             <h3>Najczęściej odwiedzane</h3>
-            <li><a href="{{ url_for('render_onas') }}">Poznaj nasz zespół</a></li>
-            <li><a href="{{ url_for('render_szkolenie') }}">Kalendarz dostępnych terminów</a></li>
-            <li><a href="{{ url_for('render_szkolenia') }}">Dostępne szkolenia</a></li>
-            <li><a href="{{ url_for('render_kontakt') }}">Kontakt</a></li>
+            <li><a href="onas.php">Poznaj nasz zespół</a></li>
+            <li><a href="szkolenie.php">Kalendarz dostępnych terminów</a></li>
+            <li><a href="szkolenia.php">Dostępne szkolenia</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
           </ul>
         </div>
         <div class="newsletter">
           <h3>Zapisz się na newsletter</h3>
           <form action="sign_for_newsletter.php" method="POST" id="bottom">
-              <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required/>
+              <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required aria-label="E-mail"/>
               <input type="submit" value="<?php echo isset($_GET['signed_successful']) ? 'Dziękujemy' : (isset($_GET['signed_error']) ? 'Błąd' : 'Wyślij');?>"/>
               <input type="hidden" name="return_url" value="<?php echo basename($_SERVER['PHP_SELF'])?>">
           </form>
         </div>
       </div>
-    <hr class="footer_hr">
+        <hr class="footer_hr">
       <div class="social">
         <i class="fab fa-linkedin"></i>
         <i class="fab fa-facebook"></i>
@@ -97,14 +98,11 @@
       </div>
       <div class="info">
         <div class="legal">
-          <a href="#regulamin">Regulamin</a><a href="#polityka">Polityka prywatności</a>
+          <a href="regulamin.txt" target="_blank">Regulamin</a><a href="polityka.txt" target="_blank">Polityka prywatności</a>
         </div>
         <div class="copyright">2024 Copyright &copy; 23 Solutions</div>
       </div>
     </footer>
-
-
-    <script src="static/script.js"></script>
 
 </body>
 </html>

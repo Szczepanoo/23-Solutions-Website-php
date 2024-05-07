@@ -25,6 +25,11 @@ body {
     margin: auto;
 }
 
+.logo img{
+    height: 100px;
+    width: 100px;
+}
+
 .topnav {
     background-color: #FFF;
     overflow: hidden;

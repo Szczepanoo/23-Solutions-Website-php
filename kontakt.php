@@ -19,21 +19,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tel = $_POST['tel'] ?? '';
     $mes = $_POST['message'] ?? '';
 
-    
-
 
     $stmt = $conn->prepare("INSERT INTO messages (name, surname, email, tel, message_text) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $name, $surname, $email, $tel, $mes);
 
     if ($stmt->execute()) {
         header("Location: kontakt.php?message_send=1");
+        $stmt->close();
         exit();
     } else {
         header("Location: kontakt.php?sending_error=1");
+        $stmt->close();
         exit();
     }
 
-    $stmt->close();
+
     
   }
 
@@ -51,11 +51,12 @@ $conn->close();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="static/script.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="static/images/logo.jpeg" alt="Logo firmy 23 solutions" width="100px" height="100px">
+            <img src="static/images/logo.jpeg" alt="Logo firmy 23 solutions">
         </div>
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
@@ -85,21 +86,21 @@ $conn->close();
     <section class="form">
         <h2>Skontaktuj się z nami</h2>
         <form action="" method="POST">
-            <input type="text" id="name" name="name" required placeholder="Imię">
+            <input type="text" id="name" name="name" required placeholder="Imię" aria-label="name">
 
-            <input type="text" id="surname" name="surname" required placeholder="Nazwisko">
+            <input type="text" id="surname" name="surname" required placeholder="Nazwisko" aria-label="surname">
 
-            <input type="email" id="email" name="email" required placeholder="E-mail">
+            <input type="email" id="email" name="email" required placeholder="E-mail" aria-label="E-mail">
 
-            <input type="tel" id="tel" name="tel" required placeholder="Telefon" pattern="[0-9]{9}">
+            <input type="tel" id="tel" name="tel" required placeholder="Telefon" pattern="[0-9]{9}" aria-label="tel">
 
             <input type="file" id="attachment" name="attachment">
 
-            <textarea id="message" name="message" rows="4" required placeholder="Wiadomość" maxlength="600"></textarea>
+            <textarea id="message" name="message" rows="4" required placeholder="Wiadomość" maxlength="600" aria-label="message_text"></textarea>
 
             <div class="accept-regulations">
-                <input type="checkbox" id="accept" name="accept" required>
-                <label>Akceptuję <a class="regulamin" href="#regulamin">regulamin</a></label>
+                <input type="checkbox" id="accept" name="accept" required aria-label="checkbox">
+                <label>Akceptuję <a class="regulamin" href="regulamin.txt" target="_blank">regulamin</a></label>
             </div>
 
             <button type="submit">Wyślij</button>
@@ -113,24 +114,24 @@ $conn->close();
         <div class="pages">
           <ul>
             <h3>23 Solutions</h3>
-            <li><a href="{{ url_for('render_index') }}">Home</a></li>
-            <li><a href="{{ url_for('render_onas') }}">O nas</a></li>
-            <li><a href="{{ url_for('render_szkolenia') }}">Szkolenia</a></li>
-            <li><a href="{{ url_for('render_kontakt') }}">Kontakt</a></li>
-            <li><a href="{{ url_for('render_logowanie') }}">Logowanie</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="onas.php">O nas</a></li>
+            <li><a href="szkolenia.php">Szkolenia</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
+            <li><a href="logowanie.php">Logowanie</a></li>
           </ul>
           <ul>
             <h3>Najczęściej odwiedzane</h3>
-            <li><a href="{{ url_for('render_onas') }}">Poznaj nasz zespół</a></li>
-            <li><a href="{{ url_for('render_szkolenie') }}">Kalendarz dostępnych terminów</a></li>
-            <li><a href="{{ url_for('render_szkolenia') }}">Dostępne szkolenia</a></li>
-            <li><a href="{{ url_for('render_kontakt') }}">Kontakt</a></li>
+            <li><a href="onas.php">Poznaj nasz zespół</a></li>
+            <li><a href="szkolenie.php">Kalendarz dostępnych terminów</a></li>
+            <li><a href="szkolenia.php">Dostępne szkolenia</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
           </ul>
         </div>
         <div class="newsletter">
           <h3>Zapisz się na newsletter</h3>
           <form action="sign_for_newsletter.php" method="POST" id="bottom">
-              <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required/>
+              <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required aria-label="E-mail"/>
               <input type="submit" value="<?php echo isset($_GET['signed_successful']) ? 'Dziękujemy' : (isset($_GET['signed_error']) ? 'Błąd' : 'Wyślij');?>"/>
               <input type="hidden" name="return_url" value="<?php echo basename($_SERVER['PHP_SELF'])?>">
           </form>
@@ -145,14 +146,11 @@ $conn->close();
       </div>
       <div class="info">
         <div class="legal">
-          <a href="#regulamin">Regulamin</a><a href="#polityka">Polityka prywatności</a>
+          <a href="regulamin.txt" target="_blank">Regulamin</a><a href="polityka.txt" target="_blank">Polityka prywatności</a>
         </div>
         <div class="copyright">2024 Copyright &copy; 23 Solutions</div>
       </div>
     </footer>
-
-
-    <script src="static/script.js"></script>
 
 </body>
 </html>

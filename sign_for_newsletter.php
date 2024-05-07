@@ -31,14 +31,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             header("Location: index.php?signed_successful=1#bottom");
+            $stmt->close();
             exit();
         } else {
             header("Location: index.php?signed_error=1#bottom");
+            $stmt->close();
             exit();
         }
     }
-
-    $stmt->close();
 
 }
 
