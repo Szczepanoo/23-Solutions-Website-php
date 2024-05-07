@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt_check_email->get_result();
 
     if ($result->num_rows > 0) {
-        header("Location: index.php?signed_successful=1#bottom");
+        header("Location: $return_url?signed_successful=1#bottom");
         exit();
     } else {
         $stmt = $conn->prepare("INSERT INTO newsletters (email) VALUES (?)");
