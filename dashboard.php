@@ -25,8 +25,8 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $name = $row['name'];
     $surname = $row['surname'];
-    $mail = $row['mail'];
-    $phone = $row['phone'];
+    $email = $row['email'];
+    $tel = $row['tel'];
     $isNewsletter = $row['newsletter'];
 
 
@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../static/images/logo.jpeg" alt="Logo firmy 23 solutions" width="100px" height="100px">
+            <img src="static/images/logo.jpeg" alt="Logo firmy 23 solutions" width="100px" height="100px">
         </div>
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
@@ -70,9 +70,9 @@ if ($result->num_rows > 0) {
 
             <input type="text" id="surname" name="surname" required placeholder="Nazwisko" value=<?php echo $surname; ?>>
 
-            <input type="tel" id="tel" name="tel" required placeholder="Telefon" pattern="[0-9]{9}" value=<?php echo $phone; ?>>
+            <input type="tel" id="tel" name="tel" required placeholder="Telefon" pattern="[0-9]{9}" value=<?php echo $tel; ?>>
 
-            <input type="email" id="email" name="email" required placeholder="E-mail" value=<?php echo $mail; ?>>
+            <input type="email" id="email" name="email" required placeholder="E-mail" value=<?php echo $email; ?>>
 
             <input type="password" id="password" name="password" required placeholder="Hasło" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$"
            title="Hasło musi zawierać co najmniej 8 znaków, w tym co najmniej jedną małą i jedną wielką literę, jedną cyfrę oraz jeden znak specjalny.">

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pas = $_POST['password'] ?? '';
     $sign_for_newsletter = isset($_POST['sign_for_newsletter']) ? 1 : 0;
 
-    $stmt_check_email = $conn->prepare("SELECT * FROM users WHERE mail = ?");
+    $stmt_check_email = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt_check_email->bind_param("s", $email);
     $stmt_check_email->execute();
     $result = $stmt_check_email->get_result();
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $h_pas = password_hash($pas, PASSWORD_DEFAULT);
 
-        $stmt = $conn->prepare("INSERT INTO users (name, surname, mail, phone, password, newsletter) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO users (name, surname, email, tel, password, newsletter) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("sssssi", $name, $surname, $email, $tel, $h_pas, $sign_for_newsletter);
 
         if ($stmt->execute()) {

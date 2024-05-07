@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'] ?? '';
     $pas = $_POST['pas'] ?? '';
 
-    $stmt_check_user = $conn->prepare("SELECT * FROM users WHERE mail = ?");
+    $stmt_check_user = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt_check_user->bind_param("s", $email);
     $stmt_check_user->execute();
     $result = $stmt_check_user->get_result();
