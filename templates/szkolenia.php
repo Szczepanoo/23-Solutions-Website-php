@@ -51,7 +51,7 @@
             <h3>CSR: Narzędzia i Strategie</h3>
         </div>
 
-        <div class="szkolenie" style="background-image: url('../static/images/szkolenie5.jpg')" onclick="goto('szkolenie.html?szkolenie=5')">
+        <div class="szkolenie" style="background-image: url('../static/images/szkolenie5.jpg')" onclick="goto('szkolenie.php?szkolenie=5')">
             <h3>Zielone Strategie</h3>
         </div>
     </div>
