@@ -36,7 +36,7 @@
     <div class="szkolenia">
 
         <div class="szkolenie" style="background-image: url('../static/images/szkolenie1.jpg')" onclick="goto('szkolenie.php?szkolenie=1')">
-            <h3>Transformacja Biznesu</h3>
+            <h3>Przemiana Biznesu</h3>
         </div>
 
         <div class="szkolenie" style="background-image: url('../static/images/szkolenie2.jpg')" onclick="goto('szkolenie.php?szkolenie=2')">
@@ -60,7 +60,7 @@
         <div class="p2_text">
         Jeśli nie widzisz niczego odpowiedniego dla siebie, nie martw się! Skontaktuj się z nami, a razem opracujemy spersonalizowaną ofertę dostosowaną do Twoich unikalnych potrzeb i celów. Dzięki naszej współpracy znajdziemy idealne rozwiązanie, które pomoże Ci osiągnąć sukces i zrealizować swoje cele.
         </div>
-        <button class="home_click_me" onclick="goto('kontakt.html')">Napisz do nas</button>
+        <button class="home_click_me" onclick="goto('kontakt.php')">Napisz do nas</button>
     </div>
 
 

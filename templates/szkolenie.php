@@ -63,8 +63,25 @@ $conn->close();
         <h1><?php echo $title?></h1>
     </section>
 
+
+
     <div class="p1"><?php echo $p1?></div>
 
+    <div class="course_info">
+        <p>Czas trwania - <?php echo $duration?> h</p>
+        <p>Cena - <?php echo $price?> PLN</p>
+        <p>Zalecana liczba uczestników - <?php echo $users_amount?></p>
+    </div>
+
+    <div class="hero2" style="background-image: url(<?php echo '../static/images/szkoleniep'.$szkolenie.'.jpg'?>)"></div>
+
+
+    <div class="p2">
+        <div class="p2_text">
+        <?php echo $p2?>
+        </div>
+        <button class="home_click_me" onclick="goto('rezerwacja.html')">Zarezerwuj</button>
+    </div>
 
     <footer>
       <div class="top">

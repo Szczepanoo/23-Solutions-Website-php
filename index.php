@@ -40,17 +40,17 @@
         <div class="left_arrow" onclick="moveItem('left')"></div>
         <div class="home_container_item" id="item_1" style="background-image: url('static/images/szkolenie2.jpg')">
             <h3>ESG w praktyce</h3>
-            <button class="home_wiecej">Więcej</button>
+            <button class="home_wiecej" onclick="goto('templates/szkolenie.php?szkolenie=2')">Więcej</button>
         </div>
 
         <div class="home_container_item visible" id="item_2" style="background-image: url('static/images/szkolenie3.jpg')">
             <h3>Zarządzanie Ryzykiem</h3>
-            <button class="home_wiecej">Więcej</button>
+            <button class="home_wiecej" onclick="goto('templates/szkolenie.php?szkolenie=3')">Więcej</button>
         </div>
 
         <div class="home_container_item" id="item_3" style="background-image: url('static/images/szkolenie5.jpg')">
             <h3>Zielone Strategie</h3>
-            <button class="home_wiecej">Więcej</button>
+            <button class="home_wiecej" onclick="goto('templates/szkolenie.php?szkolenie=5')">Więcej</button>
         </div>
         <div class="right_arrow" onclick="moveItem('right')"></div>
     </div>
@@ -58,7 +58,7 @@
     <div class="p2">
         <div class="p2_text">
         Dołącz do naszej społeczności i rozpocznij swoją podróż w kierunku bardziej zrównoważonej przyszłości już dziś! Kliknij w przycisk obok, aby dowiedzieć się więcej o naszych szkoleniach i jak możemy wspólnie wprowadzić pozytywne zmiany w Twojej organizacji.</div>
-        <button class="home_click_me" onclick="goto('szkolenia.html')">Zacznij już teraz</button>
+        <button class="home_click_me" onclick="goto('templates/szkolenia.php')">Zacznij już teraz</button>
     </div>
 
 <footer>
