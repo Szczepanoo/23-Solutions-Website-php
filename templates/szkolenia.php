@@ -35,24 +35,24 @@
 
     <div class="szkolenia">
 
-        <div class="szkolenie" style="background-image: url('../static/images/szkolenie1.jpg')" onclick="goto('szkolenie.php')">
-            <h3>Szkolenie 1</h3>
+        <div class="szkolenie" style="background-image: url('../static/images/szkolenie1.jpg')" onclick="goto('szkolenie.php?szkolenie=1')">
+            <h3>Transformacja Biznesu</h3>
         </div>
 
-        <div class="szkolenie" style="background-image: url('../static/images/szkolenie2.jpg')" onclick="goto('szkolenie.php')">
-            <h3>Szkolenie 2</h3>
+        <div class="szkolenie" style="background-image: url('../static/images/szkolenie2.jpg')" onclick="goto('szkolenie.php?szkolenie=2')">
+            <h3>ESG w praktyce</h3>
         </div>
 
-        <div class="szkolenie" style="background-image: url('../static/images/szkolenie3.jpg')" onclick="goto('szkolenie.php')">
-            <h3>Szkolenie 3</h3>
+        <div class="szkolenie" style="background-image: url('../static/images/szkolenie3.jpg')" onclick="goto('szkolenie.php?szkolenie=3')">
+            <h3>Zarządzanie Ryzykiem</h3>
         </div>
 
-        <div class="szkolenie" style="background-image: url('../static/images/szkolenie4.jpg')" onclick="goto('szkolenie.php')">
-            <h3>Szkolenie 4</h3>
+        <div class="szkolenie" style="background-image: url('../static/images/szkolenie4.jpg')" onclick="goto('szkolenie.php?szkolenie=4')">
+            <h3>CSR: Narzędzia i Strategie</h3>
         </div>
 
-        <div class="szkolenie" style="background-image: url('../static/images/szkolenie5.jpg')" onclick="goto('szkolenie.html')">
-            <h3>Szkolenie 5</h3>
+        <div class="szkolenie" style="background-image: url('../static/images/szkolenie5.jpg')" onclick="goto('szkolenie.html?szkolenie=5')">
+            <h3>Zielone Strategie</h3>
         </div>
     </div>
 

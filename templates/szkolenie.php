@@ -1,3 +1,36 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "23solutions";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$szkolenie = $_GET["szkolenie"];
+
+$stmt_check_email = $conn->prepare("SELECT * FROM courses WHERE id = ?");
+$stmt_check_email->bind_param("s", $szkolenie);
+$stmt_check_email->execute();
+$result = $stmt_check_email->get_result();
+
+$row = $result->fetch_assoc();
+
+    $title = $row['title'];
+    $price = $row['price'];
+    $users_amount = $row['users_amount'];
+    $duration = $row['duration'];
+    $p1 = $row['p1'];
+    $p2 = $row['p2'];
+
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +59,12 @@
       </nav>
     </header>
 
-    <section class="hero_short">
-        <h1>Szkolenie</h1>
-
+    <section class="hero_short" style="background-image: url(<?php echo '../static/images/szkolenie'.$szkolenie.'.jpg'?>)">
+        <h1><?php echo $title?></h1>
     </section>
+
+    <div class="p1"><?php echo $p1?></div>
+
 
     <footer>
       <div class="top">

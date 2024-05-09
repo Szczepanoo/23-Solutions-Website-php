@@ -332,6 +332,7 @@ h2 {
 }
 
 .szkolenie{
+    text-align: center;
     background-position: center;
     background-size: cover;
     display: grid;
@@ -344,8 +345,9 @@ h2 {
 }
 
 .szkolenie h3 {
+    padding: 10px;
     margin: auto;
-    font-size: 70px;
+    font-size: 60px;
     -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #0b5917;
