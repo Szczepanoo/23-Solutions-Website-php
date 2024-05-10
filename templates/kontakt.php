@@ -70,7 +70,6 @@ $conn->close();
             } else {
                echo "<a href='logowanie.php' class='topnav_a'>Logowanie</a>";
             }
-
             ?>
       </nav>
     </header>

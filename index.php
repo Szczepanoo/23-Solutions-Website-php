@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +25,13 @@
           <a href="templates/onas.php" class="topnav_a">O nas</a>
           <a href="templates/szkolenia.php" class="topnav_a">Szkolenia</a>
           <a href="templates/kontakt.php" class="topnav_a">Kontakt</a>
-          <a href="templates/logowanie.php" class="topnav_a">Logowanie</a>
+          <?php
+            if(isset($_SESSION['user_id'])){
+                echo "<a href='templates/dashboard.php' class='topnav_a'>Panel</a>";
+            } else {
+               echo "<a href='templates/logowanie.php' class='topnav_a'>Logowanie</a>";
+            }
+            ?>
       </nav>
     </header>
 
