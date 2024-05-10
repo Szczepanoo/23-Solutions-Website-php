@@ -50,20 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <div class="confirmation_form">
-        <div class="szkolenie_info">
-            <label>Tytuł szkolenia: </label>
-            <input type="text" name="title" value="<?php echo $title?>" disabled aria-label="title">
-
-            <label>Cena</label>
-            <input type="text" name="price" value="__" disabled aria-label="price">
-
-            <label>Czas trwania szkolenia</label>
-            <input type="text" name="duration" value="__" disabled aria-label="duration">
-
-            <label>Data</label>
-            <input type="text" name="date" value="<?php echo $date?>" disabled aria-label="date">
-        </div>
-
         <div class="user_info">
             <label>Imię</label>
             <input type="text" name="name" value="<?php echo $name?>" disabled aria-label="name">
@@ -79,6 +65,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label>Telefon kontaktowy:</label>
             <input type="text" name="tel" value="<?php echo $tel?>" disabled aria-label="tel">
+        </div>
+
+        <div class="szkolenie_info">
+            <label>Tytuł szkolenia</label>
+            <input type="text" name="title" value="<?php echo $title?>" disabled aria-label="title">
+
+            <label>Cena</label>
+            <input type="text" name="price" value="__" disabled aria-label="price">
+
+            <label>Czas trwania szkolenia</label>
+            <input type="text" name="duration" value="__" disabled aria-label="duration">
+
+            <label>Data</label>
+            <input type="text" name="date" value="<?php echo $date?>" disabled aria-label="date">
+
+            <label></label>
+            <input type="button" name="confirm" value="Rezerwuj">
         </div>
     </div>
 

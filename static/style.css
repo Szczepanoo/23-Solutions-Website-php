@@ -807,6 +807,43 @@ h2 {
 
 
 
+/* POTWIERDZENIE */
+
+.confirmation_form{
+    display: grid;
+    width: 40%;
+    border: 3px solid #0b5917;
+    margin: 40px auto;
+    padding: 20px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+.confirmation_form input{
+    font-size: 18px;
+    border: 1px solid #0b5917;
+    padding: 10px;
+}
+
+.confirmation_form label{
+    font-size: 18px;
+    text-align: left;
+    bottom: 0;
+}
+
+.szkolenie_info {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(10,1fr);
+}
+
+.user_info {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+
+
 
 
 /* FOOTER */
