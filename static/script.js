@@ -50,9 +50,6 @@ function submitForm(event) {
         var confirmPassword = document.getElementById("repas").value;
         var isFormValid = password === confirmPassword;
 
-
-
-
         if (isFormValid) {
 
 
@@ -75,4 +72,3 @@ if (szerokoscEkranu > 1227) {
     hamburger.className = "fa fa-bars"
 }
 });
-

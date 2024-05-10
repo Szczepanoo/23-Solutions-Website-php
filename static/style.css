@@ -497,6 +497,7 @@ h2 {
     border: 1px solid #0b5917;
     grid-column: 1 / span 2;
     grid-row: 1;
+    padding: 10px;
 }
 
 .login_form input[type="password"]{
@@ -504,6 +505,7 @@ h2 {
     border: 1px solid #0b5917;
     grid-column: 1/ span 2;
     grid-row: 2;
+    padding: 10px;
 }
 
 .login_form button{
@@ -593,6 +595,7 @@ h2 {
     font-size: 18px;
     border: 1px solid #0b5917;
     grid-column: 1;
+    padding: 10px;
 }
 
 .signup_form .repas{
@@ -654,6 +657,9 @@ h2 {
 }
 
 
+
+
+
 /* DASHBOARD */
 
 .dashboard_panel {
@@ -680,6 +686,7 @@ h2 {
     font-size: 18px;
     border: 1px solid #0b5917;
     grid-column: 1;
+    padding: 10px;
 }
 
 .dashboard_panel .repas{
@@ -763,7 +770,7 @@ h2 {
 .reservation_form form{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 200px 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     width: 80%;
     margin: auto;
     row-gap: 30px;
@@ -775,6 +782,7 @@ h2 {
     font-size: 18px;
     border: 1px solid #0b5917;
     grid-column: 1;
+    padding: 10px;
 }
 
 .reservation_form .submit{
@@ -792,6 +800,10 @@ h2 {
     background-color: #0b3517;
     transition: all 0.5s ease;
 }
+
+
+
+
 
 
 
@@ -1086,6 +1098,10 @@ footer .newsletter form {
     }
 
     .dashboard_panel{
+        width: 85%;
+    }
+
+    .reservation_form{
         width: 85%;
     }
 

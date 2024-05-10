@@ -1,10 +1,13 @@
 <?php
 session_start();
-if(isset($_SESSION['user_id'])) {
-    $name = $_SESSION['name'];
-    $surname = $_SESSION['surname'];
-    $email = $_SESSION['email'];
-    $tel = $_SESSION['tel'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'] ?? '';
+    $surname = $_POST['surname'] ?? '';
+    $tel = $_POST['tel'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $company_name = $_POST['company_name'] ?? '';
+    $date = $_POST['date'] ?? '';
+
 }
 ?>
 <!DOCTYPE html>
@@ -43,34 +46,6 @@ if(isset($_SESSION['user_id'])) {
 
     <section class="hero_short" style="background-image: url(<?php echo '../static/images/hero_rezerwacja.jpg'?>)">
         <h1><?php echo $_GET['title']?></h1>
-    </section>
-
-
-    <section class="reservation_form">
-        <h2>Rezerwacja</h2>
-        <form action="potwierdzenie.php" method="POST" id="reservation_form">
-            <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię" value="<?php echo isset($name) ? $name : ''; ?>">
-
-            <input type="text" id="surname" name="surname" aria-label="surname" required placeholder="Nazwisko" value="<?php echo isset($surname) ? $surname : ''; ?>">
-
-            <input type="tel" id="tel" name="tel" aria-label="tel" required placeholder="Telefon" pattern="[0-9]{9}" value="<?php echo isset($tel) ? $tel : ''; ?>">
-
-            <input type="email" id="email" name="email" aria-label="e-mail" required placeholder="E-mail" value="<?php echo isset($email) ? $email : ''; ?>">
-
-            <input type="text" id="company_name" name="company_name" aria-label="company_name" placeholder="Nazwa firmy" required>
-
-            <input type="date" id="calendar" class="calendar" aria-label="calendar" name="date" required>
-
-
-            <div class="accept-regulations">
-                <div class="acc_regulamin">
-                    <input type="checkbox" id="accept" name="accept" required aria-label="checkbox">
-                    <label>Akceptuję <a class="regulamin" href="../regulamin.txt" target="_blank">regulamin</a></label>
-                </div>
-            </div>
-            <button type="submit" class="submit">Dalej</button>
-
-        </form>
     </section>
 
 
