@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'] ?? '';
     $company_name = $_POST['company_name'] ?? '';
     $date = $_POST['date'] ?? '';
-
+    $title = $_POST['title'] ?? '';
 }
 ?>
 <!DOCTYPE html>
@@ -45,8 +45,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <section class="hero_short" style="background-image: url(<?php echo '../static/images/hero_rezerwacja.jpg'?>)">
-        <h1><?php echo $_GET['title']?></h1>
+        <h1>Potwierdź rezerwacje</h1>
     </section>
+
+
+    <div class="confirmation_form">
+        <div class="szkolenie_info">
+            <label>Tytuł szkolenia: </label>
+            <input type="text" name="title" value="<?php echo $title?>" disabled aria-label="title">
+
+            <label>Cena</label>
+            <input type="text" name="price" value="__" disabled aria-label="price">
+
+            <label>Czas trwania szkolenia</label>
+            <input type="text" name="duration" value="__" disabled aria-label="duration">
+
+            <label>Data</label>
+            <input type="text" name="date" value="<?php echo $date?>" disabled aria-label="date">
+        </div>
+
+        <div class="user_info">
+            <label>Imię</label>
+            <input type="text" name="name" value="<?php echo $name?>" disabled aria-label="name">
+
+            <label>Nazwisko</label>
+            <input type="text" name="surname" value="<?php echo $surname?>" disabled aria-label="surname">
+
+            <label>Firma</label>
+            <input type="text" name="company_name" value="<?php echo $company_name?>" disabled aria-label="company_name">
+
+            <label>E-mail</label>
+            <input type="text" name="email" value="<?php echo $email?>" disabled aria-label="email">
+
+            <label>Telefon kontaktowy:</label>
+            <input type="text" name="tel" value="<?php echo $tel?>" disabled aria-label="tel">
+        </div>
+    </div>
+
+
 
 
     <footer>
