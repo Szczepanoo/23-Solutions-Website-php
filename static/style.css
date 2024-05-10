@@ -661,13 +661,13 @@ h2 {
     display: grid;
     width: 40%;
     border: 3px solid #0b5917;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
 }
 
 .dashboard_panel form{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0 1fr 1fr 1fr;
     width: 80%;
     margin: auto;
     row-gap: 30px;
@@ -709,9 +709,9 @@ h2 {
   grid-row-gap: 100px;
 }
 
-.dashboard_panel button{
+.dashboard_panel button[type='submit']{
     margin-bottom: 20px;
-    height: 40px;
+    height: 100%;
     font-size: 24px;
     background-color: #0b5917;
     border: none;
@@ -719,13 +719,31 @@ h2 {
     grid-column: 1;
 }
 
-.dashboard_panel button:hover{
+.dashboard_panel button[type='submit']:hover{
     cursor: pointer;
     background-color: #0b3517;
     transition: all 0.5s ease;
 }
 
 
+.dashboard_panel button[type='button']{
+    margin-bottom: 20px;
+    height: 100%;
+    font-size: 24px;
+    background-color: #FFF;
+    border: 3px solid #F62020;
+    color: #F62020;
+    grid-column: 1;
+}
+
+
+.dashboard_panel button[type='button']:hover{
+    cursor: pointer;
+    background-color: #F62020;
+    color: #FFFFFF;
+    transition: all 0.5s ease;
+
+}
 
 
 
