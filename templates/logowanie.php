@@ -89,6 +89,8 @@ $conn->close();
         echo "Nieprawidłowe dane logowania";
     } else if (isset($_GET['niezalogowany']) && $_GET['niezalogowany'] == 1){
         echo "Zaloguj się, aby kontynuować";
+    } else if (isset($_GET['wylogowano']) && $_GET['wylogowano'] == 1){
+        echo "Wylogowano";
     }
     ?>
     </div>

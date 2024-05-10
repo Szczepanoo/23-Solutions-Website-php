@@ -709,7 +709,7 @@ h2 {
   grid-row-gap: 100px;
 }
 
-.dashboard_panel button[type='submit']{
+.dashboard_panel .submit{
     margin-bottom: 20px;
     height: 100%;
     font-size: 24px;
@@ -719,14 +719,14 @@ h2 {
     grid-column: 1;
 }
 
-.dashboard_panel button[type='submit']:hover{
+.dashboard_panel .submit:hover{
     cursor: pointer;
     background-color: #0b3517;
     transition: all 0.5s ease;
 }
 
 
-.dashboard_panel button[type='button']{
+.dashboard_panel .logout{
     margin-bottom: 20px;
     height: 100%;
     font-size: 24px;
@@ -737,7 +737,7 @@ h2 {
 }
 
 
-.dashboard_panel button[type='button']:hover{
+.dashboard_panel .logout:hover{
     cursor: pointer;
     background-color: #F62020;
     color: #FFFFFF;

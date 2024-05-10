@@ -133,9 +133,9 @@ $conn->close();
               </div>
 
               
-            <button type="submit">Zatwierdź</button>
+            <button type="submit" class="submit">Zatwierdź</button>
 
-            <button type="button" name="logout">Wyloguj</button>
+            <button type="button" onclick="goto('logout.php')" class="logout">Wyloguj</button>
         </form>
     </section>
 
