@@ -6,6 +6,8 @@ $username = "root";
 $password = "";
 $dbname = "23solutions";
 
+$passwords_correct = True;
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -18,6 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tel = $_POST['tel'] ?? '';
     $email = $_POST['email'] ?? '';
     $pas = $_POST['password'] ?? '';
+    $repas = $_POST['repas'] ?? '';
+
+    if ($repas !== $pas){
+        $passwords_correct = False;
+    }
+
     $sign_for_newsletter = isset($_POST['sign_for_newsletter']) ? 1 : 0;
 
     $stmt_check_email = $conn->prepare("SELECT * FROM users WHERE email = ?");
@@ -43,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->close();
             exit();
         }
-
-
     }
+
+
 }
 
 $conn->close();
@@ -82,10 +90,9 @@ $conn->close();
         <h1>Stwórz konto</h1>
     </section>
 
-
     <section class="signup_form">
         <h2>Zarejestruj się</h2>
-        <form action="" method="POST" onsubmit="checkPasswordMatch()" id="register_form">
+        <form action="" method="POST" onsubmit=" return submitForm(event)" id="register_form">
             <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię">
 
             <input type="text" id="surname" name="surname" aria-label="surname" required placeholder="Nazwisko">
@@ -97,10 +104,8 @@ $conn->close();
             <input type="password" id="password" name="password" required placeholder="Hasło" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$"
            title="Hasło musi zawierać co najmniej 8 znaków, w tym co najmniej jedną małą i jedną wielką literę, jedną cyfrę oraz jeden znak specjalny." />
 
-
-
             <input type="password" id="repas" name="repas" aria-label="repas" required placeholder="Powtórz hasło">
-            <label class="error_label" id="error_label">Hasła nie są indentyczne</label>
+            <label class="error_label" id="error_label">Hasła nie są identyczne</label>
             <div class="accept-regulations">
                 <div class="acc_regulamin">
                     <input type="checkbox" id="accept" name="accept" required aria-label="checkbox">

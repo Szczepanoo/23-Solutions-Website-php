@@ -21,6 +21,12 @@ $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM users WHERE id = $user_id";
 $result = $conn->query($sql);
 
+$name = "";
+$surname = "";
+$email = "";
+$tel = "";
+$isNewsletter = "";
+
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $name = $row['name'];
@@ -29,6 +35,8 @@ if ($result->num_rows > 0) {
     $tel = $row['tel'];
     $isNewsletter = $row['newsletter'];
 
+}
+$conn->close();
 
 ?>
 <!DOCTYPE html>
@@ -91,10 +99,7 @@ if ($result->num_rows > 0) {
             <button type="submit">Zatwierdź</button>
         </form>
     </section>
-    <?php
-}
-    $conn->close();
-    ?>
+
     <footer>
       <div class="top">
         <div class="pages">

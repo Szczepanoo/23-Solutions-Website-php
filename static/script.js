@@ -44,26 +44,25 @@ function moveItem(direction) {
     items[currentIndex].classList.add('visible');
 }
 
+function submitForm(event) {
+        var label = document.getElementById("error_label");
 
-function checkPasswordMatch() {
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("repas").value;
-    var label = document.getElementById("error_label");
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("repas").value;
 
-    if (password !== confirmPassword) {
-        label.style.fontSize = "18px";
-        return false;
-    } else {
-        label.style.fontSize = "0px";
-        return true;
-    }
-}
-
-document.getElementById("register_form").addEventListener("submit", function(event) {
-    if (!checkPasswordMatch()) {
         event.preventDefault();
-    }
-});
+        var isFormValid = password === confirmPassword;
+
+        if (isFormValid) {
+
+
+        } else {
+            document.getElementById("password").value = "";
+            document.getElementById("repas").value = "";
+            label.style.fontSize = "18px";
+        }
+        return isFormValid;
+      }
 
 window.addEventListener('resize', function() {
 var szerokoscEkranu = window.innerWidth;
@@ -75,3 +74,4 @@ if (szerokoscEkranu > 1227) {
     hamburger.className = "fa fa-bars"
 }
 });
+

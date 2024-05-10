@@ -32,7 +32,7 @@
 
 
     <section class="reservation_form">
-        <h2>Zarejestruj się</h2>
+        <h2>Rezerwacja</h2>
         <form action="" method="POST" id="reservation_form">
             <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię">
 
@@ -43,6 +43,9 @@
             <input type="email" id="email" name="email" aria-label="e-mail" required placeholder="E-mail">
 
             <input type="text" id="company_name" name="company_name" aria-label="company_name" placeholder="Nazwa firmy">
+
+
+
 
             <div class="accept-regulations">
                 <div class="acc_regulamin">
