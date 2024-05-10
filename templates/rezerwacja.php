@@ -1,36 +1,3 @@
-<?php
-session_start();
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "23solutions";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$szkolenie = $_GET["szkolenie"];
-
-$stmt_check_email = $conn->prepare("SELECT * FROM courses WHERE id = ?");
-$stmt_check_email->bind_param("s", $szkolenie);
-$stmt_check_email->execute();
-$result = $stmt_check_email->get_result();
-
-$row = $result->fetch_assoc();
-
-    $title = $row['title'];
-    $price = $row['price'];
-    $users_amount = $row['users_amount'];
-    $duration = $row['duration'];
-    $p1 = $row['p1'];
-    $p2 = $row['p2'];
-
-
-$conn->close();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,29 +26,38 @@ $conn->close();
       </nav>
     </header>
 
-    <section class="hero_short" style="background-image: url(<?php echo '../static/images/szkolenie'.$szkolenie.'.jpg'?>)">
-        <h1><?php echo $title?></h1>
+    <section class="hero_short" style="background-image: url(<?php echo '../static/images/hero_rezerwacja.jpg'?>)">
+        <h1><?php echo $_GET['title']?></h1>
+    </section>
+
+
+    <section class="reservation_form">
+        <h2>Zarejestruj się</h2>
+        <form action="" method="POST" id="reservation_form">
+            <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię">
+
+            <input type="text" id="surname" name="surname" aria-label="surname" required placeholder="Nazwisko">
+
+            <input type="tel" id="tel" name="tel" aria-label="tel" required placeholder="Telefon" pattern="[0-9]{9}">
+
+            <input type="email" id="email" name="email" aria-label="e-mail" required placeholder="E-mail">
+
+            <input type="text" id="company_name" name="company_name" aria-label="company_name" placeholder="Nazwa firmy">
+
+            <div class="accept-regulations">
+                <div class="acc_regulamin">
+                    <input type="checkbox" id="accept" name="accept" required aria-label="checkbox">
+                    <label>Akceptuję <a class="regulamin" href="../regulamin.txt" target="_blank">regulamin</a></label>
+                </div>
+            </div>
+            <button type="submit">Potwierdź</button>
+
+        </form>
     </section>
 
 
 
-    <div class="p1"><?php echo $p1?></div>
 
-    <div class="course_info">
-        <p>Czas trwania - <?php echo $duration?> h</p>
-        <p>Cena - <?php echo $price?> PLN</p>
-        <p>Zalecana liczba uczestników - <?php echo $users_amount?></p>
-    </div>
-
-    <div class="hero2" style="background-image: url(<?php echo '../static/images/szkoleniep'.$szkolenie.'.jpg'?>)"></div>
-
-
-    <div class="p2">
-        <div class="p2_text">
-        <?php echo $p2?>
-        </div>
-        <button class="home_click_me" onclick="goto('rezerwacja.php?title=<?php echo urlencode($title)?>')">Zarezerwuj</button>
-    </div>
 
     <footer>
       <div class="top">
