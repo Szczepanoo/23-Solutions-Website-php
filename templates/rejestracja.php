@@ -20,11 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tel = $_POST['tel'] ?? '';
     $email = $_POST['email'] ?? '';
     $pas = $_POST['password'] ?? '';
-    $repas = $_POST['repas'] ?? '';
-
-    if ($repas !== $pas){
-        $passwords_correct = False;
-    }
 
     $sign_for_newsletter = isset($_POST['sign_for_newsletter']) ? 1 : 0;
 

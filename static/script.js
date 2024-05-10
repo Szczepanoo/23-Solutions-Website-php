@@ -46,12 +46,12 @@ function moveItem(direction) {
 
 function submitForm(event) {
         var label = document.getElementById("error_label");
-
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("repas").value;
-
-        event.preventDefault();
         var isFormValid = password === confirmPassword;
+
+
+
 
         if (isFormValid) {
 
@@ -60,6 +60,7 @@ function submitForm(event) {
             document.getElementById("password").value = "";
             document.getElementById("repas").value = "";
             label.style.fontSize = "18px";
+            event.preventDefault();
         }
         return isFormValid;
       }

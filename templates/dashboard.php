@@ -30,12 +30,33 @@ $isNewsletter = "";
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $name = $row['name'];
-    $surname = $row['surname'];
+    $surname = "'" . $row['surname'] . "'";
     $email = $row['email'];
     $tel = $row['tel'];
     $isNewsletter = $row['newsletter'];
 
 }
+
+$isupdated = false;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'] ?? '';
+    $surname = $_POST['surname'] ?? '';
+    $tel = $_POST['tel'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $pas = $_POST['password'] ?? '';
+    $h_pas = password_hash($pas, PASSWORD_DEFAULT);
+
+    $sign_for_newsletter = isset($_POST['sign_for_newsletter']) ? 1 : 0;
+
+    $update =  "UPDATE users SET name = '$name', surname = '$surname', email = '$email',tel = '$tel', password = '$h_pas', newsletter = $sign_for_newsletter  WHERE id = $user_id";
+
+    $isupdated = $conn->query($update);
+
+
+}
+
+
 $conn->close();
 
 ?>
@@ -70,10 +91,19 @@ $conn->close();
     <section class="hero_short" style="background-image: url('../static/images/hero_dashboard.jpg')">
         <h1>Witaj, <?php echo $name; ?></h1>
     </section>
-  
+
+    <?php
+
+    if ($isupdated){
+        echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Zaktualizowano dane</div>";
+    }
+
+    ?>
+
+
     <section class="dashboard_panel">
         <h2>Zmień swoje dane</h2>
-        <form action="" method="POST" onsubmit="checkPasswordMatch()" id="dashboard_panel">
+        <form action="" method="POST" onsubmit="return submitForm(event)" id="dashboard_panel">
 
             <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię" value=<?php echo $name; ?>>
 
