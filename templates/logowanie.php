@@ -71,27 +71,27 @@ $conn->close();
             <a href="onas.php" class="topnav_a">O nas</a>
             <a href="szkolenia.php" class="topnav_a">Szkolenia</a>
             <a href="kontakt.php" class="topnav_a">Kontakt</a>
-            <a href="logowanie.php" class="topnav_a">Logowanie</a>
+            <a href='logowanie.php' class='topnav_a'>Logowanie</a>
         </nav>
     </header>
 
     <section class="hero_short" style="background-image: url('../static/images/hero_logowanie.jpg')">
         <h1>Logowanie</h1>
     </section>
+
+    <div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>
     <?php
-    if(isset($_GET['account_created']) && $_GET['account_created'] == 1) {
-        echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Konto zostało utworzone</div>";
-    }
-
-    if(isset($_GET['creation_error']) && $_GET['creation_error'] == 1) {
-      echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Wystąpił błąd podczas tworzenia konta</div>";
-    }
-
-    if(isset($_GET['login_error']) && $_GET['login_error'] == 1) {
-      echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Nieprawidłowe dane logowania</div>";
+    if (isset($_GET['account_created']) && $_GET['account_created'] == 1){
+        echo "Konto zostało utworzone";
+    } else if (isset($_GET['creation_error']) && $_GET['creation_error'] == 1){
+        echo "Wystąpił błąd podczas tworzenia konta";
+    } else if (isset($_GET['login_error']) && $_GET['login_error'] == 1){
+        echo "Nieprawidłowe dane logowania";
+    } else if (isset($_GET['niezalogowany']) && $_GET['niezalogowany'] == 1){
+        echo "Zaloguj się, aby kontynuować";
     }
     ?>
-    
+    </div>
 
     <section class="login_form">
         <h2>Zaloguj się</h2>
