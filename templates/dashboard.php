@@ -29,11 +29,22 @@ $isNewsletter = "";
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $name = $row['name'];
+
+    $name = "'" . $row['name'] . "'";
+    $name = str_replace("'", "", $name);
+
     $surname = "'" . $row['surname'] . "'";
+    $surname = str_replace("'", "", $surname);
+
     $email = $row['email'];
     $tel = $row['tel'];
     $isNewsletter = $row['newsletter'];
+
+    $_SESSION['name'] = $name;
+    $_SESSION['surname'] = $surname;
+    $_SESSION['email'] = $email;
+    $_SESSION['tel'] = $tel;
+
 
 }
 
@@ -112,9 +123,9 @@ $conn->close();
         <h2>Zmień swoje dane</h2>
         <form action="" method="POST" onsubmit="return submitForm(event)" id="dashboard_panel">
 
-            <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię" value=<?php echo $name; ?>>
+            <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię" value="<?php echo $name; ?>">
 
-            <input type="text" id="surname" name="surname" aria-label="surname" required placeholder="Nazwisko" value=<?php echo $surname; ?>>
+            <input type="text" id="surname" name="surname" aria-label="surname" required placeholder="Nazwisko" value="<?php echo $surname; ?>">
 
             <input type="tel" id="tel" name="tel" aria-label="tel" required placeholder="Telefon" pattern="[0-9]{9}" value=<?php echo $tel; ?>>
 

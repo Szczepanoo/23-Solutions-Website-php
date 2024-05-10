@@ -750,8 +750,48 @@ h2 {
 
 
 
-/* REZERWACJA */
 
+/* REZERWACJA */
+.reservation_form {
+    margin: 40px auto;
+    display: grid;
+    width: 40%;
+    border: 3px solid #0b5917;
+    padding-bottom: 25px;
+}
+
+.reservation_form form{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 200px 1fr 1fr;
+    width: 80%;
+    margin: auto;
+    row-gap: 30px;
+}
+
+.reservation_form input[type="text"],
+.reservation_form input[type="tel"],
+.reservation_form input[type="email"]{
+    font-size: 18px;
+    border: 1px solid #0b5917;
+    grid-column: 1;
+}
+
+.reservation_form .submit{
+    margin-bottom: 20px;
+    height: 100%;
+    font-size: 24px;
+    background-color: #0b5917;
+    border: none;
+    color: #FFFFFF;
+    grid-column: 1;
+}
+
+.reservation_form .submit:hover{
+    cursor: pointer;
+    background-color: #0b3517;
+    transition: all 0.5s ease;
+}
 
 
 

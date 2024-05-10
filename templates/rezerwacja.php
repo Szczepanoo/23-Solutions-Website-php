@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(isset($_SESSION['user_id'])) {
+    $name = $_SESSION['name'];
+    $surname = $_SESSION['surname'];
+    $email = $_SESSION['email'];
+    $tel = $_SESSION['tel'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,17 +49,17 @@ session_start();
     <section class="reservation_form">
         <h2>Rezerwacja</h2>
         <form action="" method="POST" id="reservation_form">
-            <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię">
+            <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię" value="<?php echo isset($name) ? $name : ''; ?>">
 
-            <input type="text" id="surname" name="surname" aria-label="surname" required placeholder="Nazwisko">
+            <input type="text" id="surname" name="surname" aria-label="surname" required placeholder="Nazwisko" value="<?php echo isset($surname) ? $surname : ''; ?>">
 
-            <input type="tel" id="tel" name="tel" aria-label="tel" required placeholder="Telefon" pattern="[0-9]{9}">
+            <input type="tel" id="tel" name="tel" aria-label="tel" required placeholder="Telefon" pattern="[0-9]{9}" value="<?php echo isset($tel) ? $tel : ''; ?>">
 
-            <input type="email" id="email" name="email" aria-label="e-mail" required placeholder="E-mail">
+            <input type="email" id="email" name="email" aria-label="e-mail" required placeholder="E-mail" value="<?php echo isset($email) ? $email : ''; ?>">
 
-            <input type="text" id="company_name" name="company_name" aria-label="company_name" placeholder="Nazwa firmy">
+            <input type="text" id="company_name" name="company_name" aria-label="company_name" placeholder="Nazwa firmy" required>
 
-
+            <div class="calendar" style="width: 200px; height: 400px"></div>
 
 
             <div class="accept-regulations">
@@ -62,13 +68,10 @@ session_start();
                     <label>Akceptuję <a class="regulamin" href="../regulamin.txt" target="_blank">regulamin</a></label>
                 </div>
             </div>
-            <button type="submit">Potwierdź</button>
+            <button type="submit" class="submit">Dalej</button>
 
         </form>
     </section>
-
-
-
 
 
     <footer>
