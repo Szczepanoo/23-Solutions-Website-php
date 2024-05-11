@@ -20,17 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT price, duration FROM courses WHERE title = '$title'";
+    $sql = "SELECT price, duration, id FROM courses WHERE title = '$title'";
     $result = $conn->query($sql);
 
     $price = "";
     $duration = "";
+    $id = 0;
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
         $price = $row['price'];
         $duration = $row['duration'];
+        $id = $row['id'];
     }
 
 }
@@ -74,40 +76,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
 
-    <form action="szkolenia.php" method="post" onsubmit=goto('szkolenia.php')" name="confirmation_form" class="confirmation_form">
+    <form action="szkolenia.php" method="post" onsubmit="goto('szkolenia.php')" name="confirmation_form" class="confirmation_form">
+        <input type="hidden" name="course_id" value="<?php echo $id?>">
         <div class="user_info">
             <h2>Dane osobowe</h2>
 
             <label><span>Imię</span></label>
-            <input type="text" name="name" value="<?php echo $name?>" disabled aria-label="name">
+            <input type="text" name="name" value="<?php echo $name?>" readonly aria-label="name">
 
             <label><span>Nazwisko</span></label>
-            <input type="text" name="surname" value="<?php echo $surname?>" disabled aria-label="surname">
+            <input type="text" name="surname" value="<?php echo $surname?>" readonly aria-label="surname">
 
             <label><span>Firma</span></label>
-            <input type="text" name="company_name" value="<?php echo $company_name?>" disabled aria-label="company_name">
+            <input type="text" name="company_name" value="<?php echo $company_name?>" readonly aria-label="company_name">
 
             <label><span>E-mail</span></label>
-            <input type="text" name="email" value="<?php echo $email?>" disabled aria-label="email">
+            <input type="text" name="email" value="<?php echo $email?>" readonly aria-label="email">
 
             <label><span>Telefon kontaktowy</span></label>
-            <input type="text" name="tel" value="<?php echo $tel?>" disabled aria-label="tel">
+            <input type="text" name="tel" value="<?php echo $tel?>" readonly aria-label="tel">
         </div>
 
         <div class="szkolenie_info">
             <h2>Wybrane szkolenie</h2>
 
             <label><span>Tytuł</span></label>
-            <input type="text" name="title" value="<?php echo $title?>" disabled aria-label="title">
+            <input type="text" name="title" value="<?php echo $title?>" readonly aria-label="title">
 
             <label><span>Cena</span></label>
-            <input type="text" name="price" value="<?php echo $price?> PLN" disabled aria-label="price">
+            <input type="text" name="price" value="<?php echo $price?> PLN" readonly aria-label="price">
 
             <label><span>Czas trwania</span></label>
-            <input type="text" name="duration" value="<?php echo $duration?> h" disabled aria-label="duration">
+            <input type="text" name="duration" value="<?php echo $duration?> h" readonly aria-label="duration">
 
             <label><span>Data</span></label>
-            <input type="text" name="date" value="<?php echo $date?>" disabled aria-label="date">
+            <input type="text" name="date" value="<?php echo $date?>" readonly aria-label="date">
 
             <label></label>
             <input type="submit" name="confirm" value="Rezerwuj">

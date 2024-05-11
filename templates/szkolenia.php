@@ -1,5 +1,38 @@
 <?php
 session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'] ?? '';
+    $surname = $_POST['surname'] ?? '';
+    $tel = $_POST['tel'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $company_name = $_POST['company_name'] ?? '';
+    $date = $_POST['date'] ?? '';
+    $course_id = $_POST['course_id'] ?? '';
+
+    $user_id = $_SESSION['user_id'] ?? 0;
+
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "23solutions";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $stmt = $conn->prepare("INSERT INTO reservations (date, company_name, name, surname, email, tel, user_id, course_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssii", $date, $company_name, $name, $surname, $email, $tel, $user_id, $course_id);
+
+    if ($stmt->execute()) {
+        $executed = 1;
+    } else {
+        $executed = 0;
+    }
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +70,15 @@ session_start();
     <section class="hero_short" style="background-image: url('../static/images/hero_szkolenia.jpg')">
         <h1>Odkryj nowe możliwości</h1>
     </section>
+
+    <?php
+    if (isset($executed) && $executed == 1) {
+        echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 40px'>Dziękujemy za rezerwację</div>";
+    } else if (isset($executed) && $executed == 0) {
+        echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Wystąpił błąd podczas rezerwacji</div>";
+    }
+        ?>
+
 
     <div class="p1">
         Dołącz do naszej społeczności, gdzie razem możemy rozpocząć podróż w kierunku lepszej przyszłości już dzisiaj! Wspólnie możemy eksplorować możliwości, uczyć się i rozwijać, aby wprowadzać pozytywne zmiany w naszych organizacjach i społecznościach.</div>
