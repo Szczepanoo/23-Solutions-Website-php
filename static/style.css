@@ -841,13 +841,13 @@ h2 {
 .szkolenie_info {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 30px repeat(10,1fr);
+    grid-template-rows: 30px repeat(10,50px);
 }
 
 .user_info {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 30px repeat(10, 1fr);
+    grid-template-rows: 30px repeat(10, 50px);
 }
 
 .confirmation_form h2{
@@ -1137,6 +1137,14 @@ footer .newsletter form {
         text-decoration: underline;
     }
 
+    .confirmation_form {
+        width: 60%;
+        grid-template-columns: 100%;
+        row-gap: 40px;
+    }
+
+
+
 }
 
 @media screen and (max-width: 828px) {
@@ -1174,6 +1182,11 @@ footer .newsletter form {
     .reservation_form{
         width: 85%;
     }
+
+    .confirmation_form {
+        width: 85%;
+    }
+
 
 }
 
