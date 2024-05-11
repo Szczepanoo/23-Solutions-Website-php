@@ -858,17 +858,17 @@ h2 {
 }
 
 
-.confirmation_form input[type = "button"]{
+.confirmation_form input[type = "submit"]{
     margin-bottom: 20px;
     height: 100%;
-    font-size: 24px;
+    font-size: 18px;
     background-color: #0b5917;
     border: none;
     color: #FFFFFF;
     grid-column: 1;
 }
 
-.confirmation_form input[type = "button"]:hover {
+.confirmation_form input[type = "submit"]:hover {
     cursor: pointer;
     background-color: #0b3517;
     transition: all 0.5s ease;

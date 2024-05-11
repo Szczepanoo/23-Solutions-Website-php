@@ -8,6 +8,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $company_name = $_POST['company_name'] ?? '';
     $date = $_POST['date'] ?? '';
     $title = $_POST['title'] ?? '';
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "23solutions";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT price, duration FROM courses WHERE title = '$title'";
+    $result = $conn->query($sql);
+
+    $price = "";
+    $duration = "";
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+
+        $price = $row['price'];
+        $duration = $row['duration'];
+    }
+
 }
 ?>
 <!DOCTYPE html>
@@ -49,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
 
-    <form action="" method="post" name="confirmation_form" class="confirmation_form">
+    <form action="szkolenia.php" method="post" onsubmit=goto('szkolenia.php')" name="confirmation_form" class="confirmation_form">
         <div class="user_info">
             <h2>Dane osobowe</h2>
 
@@ -76,16 +101,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="title" value="<?php echo $title?>" disabled aria-label="title">
 
             <label><span>Cena</span></label>
-            <input type="text" name="price" value="__" disabled aria-label="price">
+            <input type="text" name="price" value="<?php echo $price?> PLN" disabled aria-label="price">
 
             <label><span>Czas trwania</span></label>
-            <input type="text" name="duration" value="__" disabled aria-label="duration">
+            <input type="text" name="duration" value="<?php echo $duration?> h" disabled aria-label="duration">
 
             <label><span>Data</span></label>
             <input type="text" name="date" value="<?php echo $date?>" disabled aria-label="date">
 
             <label></label>
-            <input type="button" name="confirm" value="Rezerwuj">
+            <input type="submit" name="confirm" value="Rezerwuj">
         </div>
     </form>
 

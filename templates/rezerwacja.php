@@ -48,7 +48,7 @@ if(isset($_SESSION['user_id'])) {
 
     <section class="reservation_form">
         <h2>Rezerwacja</h2>
-        <form action="potwierdzenie.php" method="POST" id="reservation_form">
+        <form action="potwierdzenie.php" onsubmit="goto('potwierdzenie.php')" method="POST" id="reservation_form">
             <input type="hidden" name="title" value="<?php echo $_GET['title']?>">
 
             <input type="text" id="name" name="name" aria-label="name" required placeholder="Imię" value="<?php echo isset($name) ? $name : ''; ?>">
@@ -69,7 +69,7 @@ if(isset($_SESSION['user_id'])) {
                     <label>Akceptuję <a class="regulamin" href="../regulamin.txt" target="_blank">regulamin</a></label>
                 </div>
             </div>
-            <button type="submit" onclick="goto('potwierdzenie.php')" class="submit">Dalej</button>
+            <button type="submit" class="submit">Dalej</button>
 
         </form>
     </section>
