@@ -49,41 +49,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
 
-    <div class="confirmation_form">
+    <form action="" method="post" name="confirmation_form" class="confirmation_form">
         <div class="user_info">
-            <label>Imię</label>
+            <h2>Dane osobowe</h2>
+
+            <label><span>Imię</span></label>
             <input type="text" name="name" value="<?php echo $name?>" disabled aria-label="name">
 
-            <label>Nazwisko</label>
+            <label><span>Nazwisko</span></label>
             <input type="text" name="surname" value="<?php echo $surname?>" disabled aria-label="surname">
 
-            <label>Firma</label>
+            <label><span>Firma</span></label>
             <input type="text" name="company_name" value="<?php echo $company_name?>" disabled aria-label="company_name">
 
-            <label>E-mail</label>
+            <label><span>E-mail</span></label>
             <input type="text" name="email" value="<?php echo $email?>" disabled aria-label="email">
 
-            <label>Telefon kontaktowy:</label>
+            <label><span>Telefon kontaktowy</span></label>
             <input type="text" name="tel" value="<?php echo $tel?>" disabled aria-label="tel">
         </div>
 
         <div class="szkolenie_info">
-            <label>Tytuł szkolenia</label>
+            <h2>Wybrane szkolenie</h2>
+
+            <label><span>Tytuł</span></label>
             <input type="text" name="title" value="<?php echo $title?>" disabled aria-label="title">
 
-            <label>Cena</label>
+            <label><span>Cena</span></label>
             <input type="text" name="price" value="__" disabled aria-label="price">
 
-            <label>Czas trwania szkolenia</label>
+            <label><span>Czas trwania</span></label>
             <input type="text" name="duration" value="__" disabled aria-label="duration">
 
-            <label>Data</label>
+            <label><span>Data</span></label>
             <input type="text" name="date" value="<?php echo $date?>" disabled aria-label="date">
 
             <label></label>
             <input type="button" name="confirm" value="Rezerwuj">
         </div>
-    </div>
+    </form>
 
 
 

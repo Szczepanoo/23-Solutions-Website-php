@@ -19,6 +19,7 @@ body {
     grid-template-columns: 20% 80%;
     grid-template-rows: 99% 1%;
     border-bottom: 3px solid #0b5917;
+    z-index: 1000;
 }
 
 .logo {
@@ -816,7 +817,7 @@ h2 {
     margin: 40px auto;
     padding: 20px;
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 30px;
 }
 .confirmation_form input{
     font-size: 18px;
@@ -825,22 +826,54 @@ h2 {
 }
 
 .confirmation_form label{
+    position: relative;
     font-size: 18px;
-    text-align: left;
+
+}
+
+.confirmation_form span{
+    z-index: 999;
+    position: absolute;
     bottom: 0;
+    left: 0;
 }
 
 .szkolenie_info {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(10,1fr);
+    grid-template-rows: 30px repeat(10,1fr);
 }
 
 .user_info {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: 30px repeat(10, 1fr);
 }
+
+.confirmation_form h2{
+    vertical-align: center;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 1200;
+}
+
+
+.confirmation_form input[type = "button"]{
+    margin-bottom: 20px;
+    height: 100%;
+    font-size: 24px;
+    background-color: #0b5917;
+    border: none;
+    color: #FFFFFF;
+    grid-column: 1;
+}
+
+.confirmation_form input[type = "button"]:hover {
+    cursor: pointer;
+    background-color: #0b3517;
+    transition: all 0.5s ease;
+}
+
 
 
 
