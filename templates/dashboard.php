@@ -57,11 +57,12 @@ $dates = array();
 $companies = array();
 
 if ($select_courses_result->num_rows > 0) {
-    $row = $select_courses_result->fetch_assoc();
-    for ($i = 0; $i < $courses_amount; $i++) {
+    $i = 0;
+    while ($row = $select_courses_result->fetch_assoc()) {
         $titles[$i] = $row['title'];
         $dates[$i] = $row['date'];
         $companies[$i] = $row['company_name'];
+        $i++;
     }
 }
 
