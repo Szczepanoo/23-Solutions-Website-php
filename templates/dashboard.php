@@ -153,7 +153,7 @@ $conn->close();
             echo "</table>";
         } else {
             echo "<div class='p1' style='margin-bottom: 0'>Tutaj będą widoczne szkolenia w których uczestniczysz.<br>Przejdź do strony szkoleń i wybierz kurs dla siebie.</div>";
-            echo "<button class='dashboard_link'>Szkolenia</button>";
+            echo "<button class='dashboard_link' onclick=goto('szkolenia.php')>Szkolenia</button>";
         }
 
         ?>
