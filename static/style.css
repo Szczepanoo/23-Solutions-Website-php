@@ -220,6 +220,7 @@ h2 {
 }
 
 .home_wiecej {
+    border-radius: 20px;
     background-color: #0b5917;
     color: #FFFFFF;
     font-size: 20px;
@@ -250,6 +251,7 @@ h2 {
 
 
 .home_click_me{
+    border-radius: 20px;
     background-color: #0b5917;
     color: #FFFFFF;
     padding: 3px;
@@ -430,6 +432,7 @@ h2 {
 }
 
 .form button {
+    border-radius: 20px;
     background-color: #0b5917;
     color: #fff;
     padding: 10px 20px;
@@ -671,6 +674,44 @@ h2 {
     padding-bottom: 25px;
 }
 
+.user_aktywne_szkolenia{
+    text-align: center;
+}
+
+.dashboard_link {
+    height: 50px;
+    padding: 10px;
+    font-size: 18px;
+    width: 190px;
+    border: none;
+    background-color: #0b5917;
+    color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.dashboard_link:visited{
+    color: black;
+}
+
+.dashboard_link:hover{
+    cursor: pointer;
+    background-color: #0b3517;
+    transition: all 0.5s ease;
+}
+
+.szkolenia_table{
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.szkolenia_table th,
+.szkolenia_table td{
+    font-size: 18px;
+    border: 2px solid #0b5917;
+    padding: 15px;
+}
+
+
 .dashboard_panel form{
     display: grid;
     grid-template-columns: 100%;
@@ -718,6 +759,7 @@ h2 {
 }
 
 .dashboard_panel .submit{
+    border-radius: 20px;
     margin-bottom: 20px;
     height: 100%;
     font-size: 24px;
@@ -735,6 +777,7 @@ h2 {
 
 
 .dashboard_panel .logout{
+    border-radius: 20px;
     margin-bottom: 20px;
     height: 100%;
     font-size: 24px;
@@ -787,6 +830,7 @@ h2 {
 }
 
 .reservation_form .submit{
+    border-radius: 20px;
     margin-bottom: 20px;
     height: 100%;
     font-size: 24px;
@@ -859,6 +903,7 @@ h2 {
 
 
 .confirmation_form input[type = "submit"]{
+    border-radius: 20px;
     margin-bottom: 20px;
     height: 100%;
     font-size: 18px;

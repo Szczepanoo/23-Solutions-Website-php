@@ -18,8 +18,8 @@ if ($conn->connect_error) {
 }
 
 $user_id = $_SESSION['user_id'];
-$sql = "SELECT * FROM users WHERE id = $user_id";
-$result = $conn->query($sql);
+$select_user = "SELECT * FROM users WHERE id = $user_id";
+$select_user_result = $conn->query($select_user);
 
 $name = "";
 $surname = "";
@@ -27,8 +27,8 @@ $email = "";
 $tel = "";
 $isNewsletter = "";
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
+if ($select_user_result->num_rows > 0) {
+    $row = $select_user_result->fetch_assoc();
 
     $name = "'" . $row['name'] . "'";
     $name = str_replace("'", "", $name);
@@ -48,6 +48,24 @@ if ($result->num_rows > 0) {
 
 }
 
+$select_courses = "SELECT reservations.company_name as company_name, reservations.date as date, courses.title AS title FROM reservations JOIN courses ON reservations.course_id = courses.id WHERE reservations.user_id = $user_id";
+$select_courses_result = $conn->query($select_courses);
+
+$courses_amount = $select_courses_result->num_rows;
+$titles = array();
+$dates = array();
+$companies = array();
+
+if ($select_courses_result->num_rows > 0) {
+    $row = $select_courses_result->fetch_assoc();
+    for ($i = 0; $i < $courses_amount; $i++) {
+        $titles[$i] = $row['title'];
+        $dates[$i] = $row['date'];
+        $companies[$i] = $row['company_name'];
+    }
+}
+
+
 $isupdated = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -60,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sign_for_newsletter = isset($_POST['sign_for_newsletter']) ? 1 : 0;
 
-    $update =  "UPDATE users SET name = '$name', surname = '$surname', email = '$email',tel = '$tel', password = '$h_pas', newsletter = $sign_for_newsletter  WHERE id = $user_id";
+    $update =  "UPDATE users SET name = '$name', surname = '$surname', email = $email,tel = $tel, password = '$h_pas', newsletter = $sign_for_newsletter  WHERE id = $user_id";
 
     $isupdated = $conn->query($update);
 
@@ -117,6 +135,29 @@ $conn->close();
     }
 
     ?>
+
+
+
+
+    <div class="user_aktywne_szkolenia">
+         <h2>Twoje szkolenia</h2>
+        <?php
+        if ($courses_amount > 0) {
+            echo "<table class='szkolenia_table'>";
+            echo "<tr><th>Tytuł</th><th>Uczestnik</th><th>Data</th></tr>";
+            for ($i = 0; $i < $courses_amount; $i++) {
+
+                echo "<tr><td>" . $titles[$i] . "</td><td>". $companies[$i] ."</td><td>" . $dates[$i] . "</td></tr>";
+
+            }
+            echo "</table>";
+        } else {
+            echo "<div class='p1' style='margin-bottom: 0'>Tutaj będą widoczne szkolenia w których uczestniczysz.<br>Przejdź do strony szkoleń i wybierz kurs dla siebie.</div>";
+            echo "<button class='dashboard_link'>Szkolenia</button>";
+        }
+
+        ?>
+    </div>
 
 
     <section class="dashboard_panel">
