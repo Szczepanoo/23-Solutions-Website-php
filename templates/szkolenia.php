@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="../static/script.js"></script>
 </head>
 <body>
     <header class="header">
@@ -74,8 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php
     if (isset($executed) && $executed == 1) {
         echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 40px'>Dziękujemy za rezerwację</div>";
+        echo "<div class='message' id='message'>Dziękujemy za rezerwację</div>";
     } else if (isset($executed) && $executed == 0) {
         echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Wystąpił błąd podczas rezerwacji</div>";
+        echo "<div class='message' id='message'>Wystąpił błąd podczas rezerwacji</div>";
     }
         ?>
 
@@ -158,8 +161,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </footer>
 
-
-    <script src="../static/script.js"></script>
-
+<script>
+    setTimeout(function() {
+        var message = document.getElementById('message');
+        var opacity = 1;
+        var fadeEffect = setInterval(function () {
+            if (opacity <= 0.1){
+                clearInterval(fadeEffect);
+                message.style.display = 'none';
+            } else {
+                message.style.opacity = opacity;
+                opacity -= 0.08;
+            }
+        }, 50);
+    }, 3000);
+</script>
 </body>
 </html>

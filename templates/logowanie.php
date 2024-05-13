@@ -82,14 +82,19 @@ $conn->close();
     <div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>
     <?php
     if (isset($_GET['account_created']) && $_GET['account_created'] == 1){
+        echo "<div class='message' id='message'>Konto zostało utworzone</div>";
         echo "Konto zostało utworzone";
     } else if (isset($_GET['creation_error']) && $_GET['creation_error'] == 1){
+        echo "<div class='message' id='message'>Wystąpił błąd podczas tworzenia konta</div>";
         echo "Wystąpił błąd podczas tworzenia konta";
     } else if (isset($_GET['login_error']) && $_GET['login_error'] == 1){
+        echo "<div class='message' id='message'>Nieprawidłowe dane logowania</div>";
         echo "Nieprawidłowe dane logowania";
-    } else if (isset($_GET['niezalogowany']) && $_GET['niezalogowany'] == 1){
+    } else if (isset($_GET['niezalogowano']) && $_GET['niezalogowano'] == 1){
+        echo "<div class='message' id='message'>Zaloguj się, aby kontynuować</div>";
         echo "Zaloguj się, aby kontynuować";
     } else if (isset($_GET['wylogowano']) && $_GET['wylogowano'] == 1){
+        echo "<div class='message' id='message'>Wylogowano</div>";
         echo "Wylogowano";
     }
     ?>
@@ -156,5 +161,20 @@ $conn->close();
         <div class="copyright">2024 Copyright &copy; 23 Solutions</div>
       </div>
     </footer>
+<script>
+    setTimeout(function() {
+        var message = document.getElementById('message');
+        var opacity = 1;
+        var fadeEffect = setInterval(function () {
+            if (opacity <= 0.1){
+                clearInterval(fadeEffect);
+                message.style.display = 'none';
+            } else {
+                message.style.opacity = opacity;
+                opacity -= 0.08;
+            }
+        }, 50);
+    }, 3000);
+</script>
 </body>
 </html>

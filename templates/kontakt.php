@@ -81,10 +81,12 @@ $conn->close();
     <?php
     if(isset($_GET['message_send']) && $_GET['message_send'] == 1) {
         echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Wiadomość została wysłana</div>";
+         echo "<div class='message' id='message'>Wiadomość została wysłana</div>";
     }
 
     if(isset($_GET['sending_error']) && $_GET['sending_error'] == 1) {
       echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Wystąpił błąd podczas wysyłania wiadomości</div>";
+       echo "<div class='message' id='message'>Wystąpił błąd podczas wysyłania wiadomości</div>";
     }
 
     ?>
@@ -102,7 +104,7 @@ $conn->close();
 
             <input type="file" id="attachment" name="attachment">
 
-            <textarea id="message" name="message" rows="4" required placeholder="Wiadomość" maxlength="600" aria-label="message_text"></textarea>
+            <textarea name="message" rows="4" required placeholder="Wiadomość" maxlength="600" aria-label="message_text"></textarea>
 
             <div class="accept-regulations">
                 <input type="checkbox" id="accept" name="accept" required aria-label="checkbox">
@@ -158,5 +160,20 @@ $conn->close();
       </div>
     </footer>
 
+<script>
+    setTimeout(function() {
+        var message = document.getElementById('message');
+        var opacity = 1;
+        var fadeEffect = setInterval(function () {
+            if (opacity <= 0.1){
+                clearInterval(fadeEffect);
+                message.style.display = 'none';
+            } else {
+                message.style.opacity = opacity;
+                opacity -= 0.08;
+            }
+        }, 50);
+    }, 3000);
+</script>
 </body>
 </html>

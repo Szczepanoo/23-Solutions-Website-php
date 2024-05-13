@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: logowanie.php?niezalogowano = 1");
+    header("Location: logowanie.php?niezalogowano=1");
     exit();
 }
 
@@ -133,11 +133,10 @@ $conn->close();
 
     if ($isupdated){
         echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Zaktualizowano dane</div>";
+         echo "<div class='message' id='message'>Zaktualizowano dane</div>";
     }
 
     ?>
-
-
 
 
     <div class="user_aktywne_szkolenia">
@@ -153,7 +152,7 @@ $conn->close();
             }
             echo "</table>";
         } else {
-            echo "<div class='p1' style='margin-bottom: 0'>Tutaj będą widoczne szkolenia w których uczestniczysz.<br>Przejdź do strony szkoleń i wybierz kurs dla siebie.</div>";
+            echo "<div class='p1' style='margin-bottom: 0; width: 100%'>Tutaj będą widoczne szkolenia w których uczestniczysz.<br>Przejdź do strony szkoleń i wybierz kurs dla siebie.</div>";
             echo "<button class='dashboard_link' onclick=goto('szkolenia.php')>Szkolenia</button>";
         }
 
@@ -235,5 +234,20 @@ $conn->close();
       </div>
     </footer>
 
+<script>
+    setTimeout(function() {
+        var message = document.getElementById('message');
+        var opacity = 1;
+        var fadeEffect = setInterval(function () {
+            if (opacity <= 0.1){
+                clearInterval(fadeEffect);
+                message.style.display = 'none';
+            } else {
+                message.style.opacity = opacity;
+                opacity -= 0.08;
+            }
+        }, 50);
+    }, 3000);
+</script>
 </body>
 </html>
