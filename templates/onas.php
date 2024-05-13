@@ -41,7 +41,7 @@ session_start();
     </section>
 
     <div class="p1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         Dzięki naszej wiedzy i doświadczeniu wspieramy organizacje w budowaniu społecznej odpowiedzialności i osiąganiu celów zrównoważonego rozwoju. Nasze szkolenia są skutecznym narzędziem w kształtowaniu pozytywnego wpływu społecznego i środowiskowego.
     </div>
 
 
@@ -52,7 +52,7 @@ session_start();
             </div>
             <h3>Akshara Banerjee</h3>
             <div class="osoba_opis">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                To doświadczona specjalistka ds. zrównoważonego rozwoju, od lat angażująca się w promowanie praktyk ESG i CSR. Jako kierownik ds. społecznej odpowiedzialności biznesu w 23 Solutions, skutecznie wprowadza innowacyjne strategie mające pozytywny wpływ na społeczność i środowisko.
             </div>
 
         </div>
@@ -62,7 +62,7 @@ session_start();
             </div>
             <h3>Jakub Szczepański</h3>
             <div class="osoba_opis">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                Ekspert ds. zrównoważonego rozwoju, kluczowy gracz w promowaniu 23 Solutions na rynku. Jako dyrektor ds. zrównoważonego biznesu, nie tylko wdraża innowacyjne strategie, ale także działa aktywnie na rzecz społeczności lokalnych i ochrony środowiska.
             </div>
 
         </div>
@@ -73,7 +73,7 @@ session_start();
             </div>
             <h3>Anastazja Kołowrotek</h3>
             <div class="osoba_opis">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                Dyrektorka ds. zrównoważonego rozwoju, wyróżnia się jako liderka w przemianowaniu praktyk biznesowych. Jej rola w zespole nie ogranicza się jedynie do implementacji strategii, lecz obejmuje również budowanie mostów między biznesem a społeczeństwem.
             </div>
         </div>
 
