@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sign_for_newsletter = isset($_POST['sign_for_newsletter']) ? 1 : 0;
 
-    $update =  "UPDATE users SET name = '$name', surname = '$surname', email = $email,tel = $tel, password = '$h_pas', newsletter = $sign_for_newsletter  WHERE id = $user_id";
+    $update =  "UPDATE users SET name = '$name', surname = '$surname', email = '$email',tel = $tel, password = '$h_pas', newsletter = $sign_for_newsletter  WHERE id = $user_id";
 
     $isupdated = $conn->query($update);
 
