@@ -109,8 +109,8 @@ body {
 h1 {
     text-align: center;
     -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: #0b5917;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #0b3517;
     font-size: 100px;
     font-weight: bold;
     display: flex;
@@ -358,8 +358,8 @@ h2 {
 
 .szkolenie:hover{
     cursor: pointer;
-    border: 7px solid #0b5917;
-    transition: all 0.5s ease;
+    border: 10px solid #0b5917;
+    transition: all 0.2s ease;
 }
 
 
@@ -675,6 +675,8 @@ h2 {
 }
 
 .user_aktywne_szkolenia{
+    margin: auto;
+    width: 40%;
     text-align: center;
 }
 
@@ -1220,8 +1222,17 @@ footer .newsletter form {
         width: 85%;
     }
 
+    .user_aktywne_szkolenia {
+        width: 85%;
+
+    }
+
     .dashboard_panel{
         width: 85%;
+    }
+
+    .szkolenia_table td{
+        padding: 5px;
     }
 
     .reservation_form{

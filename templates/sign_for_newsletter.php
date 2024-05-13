@@ -23,22 +23,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt_check_email->get_result();
 
     if ($result->num_rows > 0) {
-        header("Location: $return_url?signed_successful=1#bottom");
-        exit();
+        header("Location: " . ($return_url == 'index.php' ? "../index.php?signed_successful=1#bottom" : "$return_url?signed_successful=1#bottom"));
     } else {
         $stmt = $conn->prepare("INSERT INTO newsletters (email) VALUES (?)");
         $stmt->bind_param("s",  $email);
 
         if ($stmt->execute()) {
-            header("Location: index.php?signed_successful=1#bottom");
-            $stmt->close();
-            exit();
+            header("Location: " . ($return_url == 'index.php' ? "../index.php?signed_successful=1#bottom" : "$return_url?signed_successful=1#bottom"));
         } else {
-            header("Location: index.php?signed_error=1#bottom");
-            $stmt->close();
-            exit();
+            header("Location: " . ($return_url == 'index.php' ? "../index.php?signed_error=1#bottom" : "$return_url?signed_error=1#bottom"));
         }
+        $stmt->close();
     }
+    exit();
 
 }
 
