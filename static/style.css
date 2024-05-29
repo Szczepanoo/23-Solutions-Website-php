@@ -260,7 +260,7 @@ h2 {
     height: auto;
     margin: 70px auto;
     padding: 30px;
-    border: 3px solid #0b5917;
+    border: none;
 }
 
 
@@ -414,7 +414,7 @@ h2 {
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
-    border: solid 3px #0b5917;
+    border: none;
     overflow: hidden;
 }
 
@@ -498,7 +498,7 @@ h2 {
     margin-bottom: 40px;
     display: grid;
     width: 40%;
-    border: 3px solid #0b5917;
+    border: none;
     padding-bottom: 15px;
 }
 
@@ -595,7 +595,7 @@ h2 {
     margin: 40px auto;
     display: grid;
     width: 40%;
-    border: 3px solid #0b5917;
+    border: none;
     padding-bottom: 15px;
 }
 
@@ -687,7 +687,7 @@ h2 {
     margin: 40px auto;
     display: grid;
     width: 40%;
-    border: 3px solid #0b5917;
+    border: none;
     padding-bottom: 25px;
 }
 
@@ -826,7 +826,7 @@ h2 {
     margin: 40px auto;
     display: grid;
     width: 40%;
-    border: 3px solid #0b5917;
+    border: none;
     padding-bottom: 25px;
 }
 
@@ -876,7 +876,7 @@ h2 {
 .confirmation_form{
     display: grid;
     width: 40%;
-    border: 3px solid #0b5917;
+    border: none;
     margin: 40px auto;
     padding: 20px;
     grid-template-columns: 1fr 1fr;
