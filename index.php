@@ -21,10 +21,14 @@ session_start();
         </div>
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
-          <a href="index.php" class="topnav_a">Home</a>
-          <a href="templates/onas.php" class="topnav_a">O nas</a>
+            <a href="index.php" class="topnav_a">Home</a>
+            <a href="templates/onas.php" class="topnav_a">O nas</a>
+            <!--
           <a href="templates/szkolenia.php" class="topnav_a">Szkolenia</a>
-          <a href="templates/kontakt.php" class="topnav_a">Kontakt</a>
+          -->
+            <a href="templates/blog.php" class="topnav_a">Blog</a>
+            <a href="templates/kontakt.php" class="topnav_a">Kontakt</a>
+            <!--
           <?php
             if(isset($_SESSION['user_id'])){
                 echo "<a href='templates/dashboard.php' class='topnav_a'>Panel</a>";
@@ -32,6 +36,7 @@ session_start();
                echo "<a href='templates/logowanie.php' class='topnav_a'>Logowanie</a>";
             }
             ?>
+            -->
       </nav>
     </header>
 
@@ -48,18 +53,18 @@ session_start();
     <div class="home_container">
         <div class="left_arrow" onclick="moveItem('left')"></div>
         <div class="home_container_item" id="item_1" style="background-image: url('static/images/szkolenie2.jpg')">
-            <h3>ESG w praktyce</h3>
-            <button class="home_wiecej" onclick="goto('templates/szkolenie.php?szkolenie=2')">Więcej</button>
+            <h3>Blog</h3>
+            <button class="home_wiecej" onclick="goto('templates/blog.php')">Więcej</button>
         </div>
 
         <div class="home_container_item visible" id="item_2" style="background-image: url('static/images/szkolenie3.jpg')">
-            <h3>Zarządzanie Ryzykiem</h3>
-            <button class="home_wiecej" onclick="goto('templates/szkolenie.php?szkolenie=3')">Więcej</button>
+            <h3>Poznaj nas lepiej</h3>
+            <button class="home_wiecej" onclick="goto('templates/onas.php')">Więcej</button>
         </div>
 
         <div class="home_container_item" id="item_3" style="background-image: url('static/images/szkolenie5.jpg')">
-            <h3>Zielone Strategie</h3>
-            <button class="home_wiecej" onclick="goto('templates/szkolenie.php?szkolenie=5')">Więcej</button>
+            <h3>Skontakuj się z nami</h3>
+            <button class="home_wiecej" onclick="goto('templates/kontakt.php')">Więcej</button>
         </div>
         <div class="right_arrow" onclick="moveItem('right')"></div>
     </div>
@@ -89,6 +94,7 @@ session_start();
             <li><a href="templates/kontakt.php">Kontakt</a></li>
           </ul>
         </div>
+          <!--
         <div class="newsletter">
           <h3>Zapisz się na newsletter</h3>
           <form action="templates/sign_for_newsletter.php" method="POST" id="bottom">
@@ -97,6 +103,7 @@ session_start();
               <input type="hidden" name="return_url" value="<?php echo basename($_SERVER['PHP_SELF'])?>">
           </form>
         </div>
+        -->
       </div>
         <hr class="footer_hr">
       <div class="social">
