@@ -21,17 +21,22 @@ session_start();
         </div>
         <a href="javascript:void(0);" class="hamburger" onclick=showMenu(myTopnav)><i id="hamburger" class="fa fa-bars"></i></a>
         <nav class="topnav" id="myTopnav">
-          <a href="../index.php" class="topnav_a">Home</a>
-          <a href="onas.php" class="topnav_a">O nas</a>
+            <a href="../index.php" class="topnav_a">Home</a>
+            <a href="onas.php" class="topnav_a">O nas</a>
+            <a href="blog.php" class="topnav_a">Blog</a>
+            <!--
           <a href="szkolenia.php" class="topnav_a">Szkolenia</a>
-          <a href="kontakt.php" class="topnav_a">Kontakt</a>
-          <?php
+          -->
+            <a href="kontakt.php" class="topnav_a">Kontakt</a>
+            <!--
+          <-?php
             if(isset($_SESSION['user_id'])){
                 echo "<a href='dashboard.php' class='topnav_a'>Panel</a>";
             } else {
                echo "<a href='logowanie.php' class='topnav_a'>Logowanie</a>";
             }
             ?>
+            -->
       </nav>
     </header>
 
@@ -99,6 +104,7 @@ session_start();
             <li><a href="kontakt.php">Kontakt</a></li>
           </ul>
         </div>
+          <!--
         <div class="newsletter">
           <h3>Zapisz się na newsletter</h3>
           <form action="sign_for_newsletter.php" method="POST" id="bottom">
@@ -107,6 +113,7 @@ session_start();
               <input type="hidden" name="return_url" value="<?php echo basename($_SERVER['PHP_SELF'])?>">
           </form>
         </div>
+          -->
       </div>
         <hr class="footer_hr">
       <div class="social">
@@ -119,7 +126,7 @@ session_start();
         <div class="legal">
           <a href="../regulamin.txt" target="_blank">Regulamin</a><a href="../polityka.txt" target="_blank">Polityka prywatności</a>
         </div>
-        <div class="copyright">2024 Copyright &copy; 23 Solutions</div>
+        <div class="copyright">2025 Copyright &copy; 23 Solutions</div>
       </div>
     </footer>
 

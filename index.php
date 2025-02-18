@@ -29,7 +29,7 @@ session_start();
             <a href="templates/blog.php" class="topnav_a">Blog</a>
             <a href="templates/kontakt.php" class="topnav_a">Kontakt</a>
             <!--
-          <?php
+          <-?php
             if(isset($_SESSION['user_id'])){
                 echo "<a href='templates/dashboard.php' class='topnav_a'>Panel</a>";
             } else {
@@ -116,7 +116,7 @@ session_start();
         <div class="legal">
           <a href="regulamin.txt" target="_blank">Regulamin</a><a href="polityka.txt" target="_blank">Polityka prywatności</a>
         </div>
-        <div class="copyright">2024 Copyright &copy; 23 Solutions</div>
+        <div class="copyright">2025 Copyright &copy; 23 Solutions</div>
       </div>
     </footer>
 
