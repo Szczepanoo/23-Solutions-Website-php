@@ -1,4 +1,5 @@
-<?php
+<!--
+<-?php
 session_start();
 
 $servername = "localhost";
@@ -39,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+-->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,15 +65,21 @@ $conn->close();
         <nav class="topnav" id="myTopnav">
             <a href="../index.php" class="topnav_a">Home</a>
             <a href="onas.php" class="topnav_a">O nas</a>
+            <a href="blog.php" class="topnav_a">Blog</a>
+            <!--
             <a href="szkolenia.php" class="topnav_a">Szkolenia</a>
+            -->
             <a href="kontakt.php" class="topnav_a">Kontakt</a>
-            <?php
+
+            <!--
+            <-?php
             if(isset($_SESSION['user_id'])){
                 echo "<a href='dashboard.php' class='topnav_a'>Panel</a>";
             } else {
                echo "<a href='logowanie.php' class='topnav_a'>Logowanie</a>";
             }
             ?>
+            -->
       </nav>
     </header>
 
@@ -78,7 +87,8 @@ $conn->close();
         <h1>Masz pytania?</h1>
     </section>
 
-    <?php
+    <!--
+    <-?php
     if(isset($_GET['message_send']) && $_GET['message_send'] == 1) {
         echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Wiadomość została wysłana</div>";
          echo "<div class='message' id='message'>Wiadomość została wysłana</div>";
@@ -90,7 +100,10 @@ $conn->close();
     }
 
     ?>
+    -->
 
+
+    <!--
     <section class="form">
         <h2>Skontaktuj się z nami</h2>
         <form action="" method="POST">
@@ -116,6 +129,8 @@ $conn->close();
         </form>
     </section>
 
+    -->
+
 
     <footer>
       <div class="top">
@@ -136,14 +151,18 @@ $conn->close();
             <li><a href="kontakt.php">Kontakt</a></li>
           </ul>
         </div>
+
+          <!--
         <div class="newsletter">
           <h3>Zapisz się na newsletter</h3>
           <form action="sign_for_newsletter.php" method="POST" id="bottom">
               <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required aria-label="E-mail"/>
-              <input type="submit" value="<?php echo isset($_GET['signed_successful']) ? 'Dziękujemy' : (isset($_GET['signed_error']) ? 'Błąd' : 'Wyślij');?>"/>
-              <input type="hidden" name="return_url" value="<?php echo basename($_SERVER['PHP_SELF'])?>">
+              <input type="submit" value="<-?php echo isset($_GET['signed_successful']) ? 'Dziękujemy' : (isset($_GET['signed_error']) ? 'Błąd' : 'Wyślij');?>"/>
+              <input type="hidden" name="return_url" value="<-?php echo basename($_SERVER['PHP_SELF'])?>">
           </form>
         </div>
+          -->
+
       </div>
         <hr class="footer_hr">
       <div class="social">
@@ -156,10 +175,11 @@ $conn->close();
         <div class="legal">
           <a href="../regulamin.txt" target="_blank">Regulamin</a><a href="../polityka.txt" target="_blank">Polityka prywatności</a>
         </div>
-        <div class="copyright">2024 Copyright &copy; 23 Solutions</div>
+        <div class="copyright">2025 Copyright &copy; 23 Solutions</div>
       </div>
     </footer>
 
+<!--
 <script>
     setTimeout(function() {
         var message = document.getElementById('message');
@@ -175,5 +195,7 @@ $conn->close();
         }, 50);
     }, 3000);
 </script>
+-->
+
 </body>
 </html>

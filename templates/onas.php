@@ -1,6 +1,9 @@
-<?php
+<!--
+<-?php
 session_start();
 ?>
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,8 +112,8 @@ session_start();
           <h3>Zapisz się na newsletter</h3>
           <form action="sign_for_newsletter.php" method="POST" id="bottom">
               <input type="email" name="newsletter_email" id="newsletter_email" placeholder="E-mail" required aria-label="E-mail"/>
-              <input type="submit" value="<?php echo isset($_GET['signed_successful']) ? 'Dziękujemy' : (isset($_GET['signed_error']) ? 'Błąd' : 'Wyślij');?>"/>
-              <input type="hidden" name="return_url" value="<?php echo basename($_SERVER['PHP_SELF'])?>">
+              <input type="submit" value="<-?php echo isset($_GET['signed_successful']) ? 'Dziękujemy' : (isset($_GET['signed_error']) ? 'Błąd' : 'Wyślij');?>"/>
+              <input type="hidden" name="return_url" value="<-?php echo basename($_SERVER['PHP_SELF'])?>">
           </form>
         </div>
           -->
