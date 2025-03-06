@@ -1,5 +1,5 @@
-<!--
-<-?php
+
+<?php
 session_start();
 
 $servername = "localhost";
@@ -17,12 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'] ?? '';
     $surname = $_POST['surname'] ?? '';
     $email = $_POST['email'] ?? '';
-    $tel = $_POST['tel'] ?? '';
+    $company_name = $_POST['company_name'] ?? '';
     $mes = $_POST['message'] ?? '';
 
 
-    $stmt = $conn->prepare("INSERT INTO messages (name, surname, email, tel, message_text) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $name, $surname, $email, $tel, $mes);
+    $stmt = $conn->prepare("INSERT INTO messages (name, surname, email, company_name, message_text) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $name, $surname, $email, $company_name, $mes);
 
     if ($stmt->execute()) {
         header("Location: kontakt.php?message_send=1");
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
--->
+
 
 
 <!DOCTYPE html>
@@ -87,8 +87,7 @@ $conn->close();
         <h1>Masz pytania?</h1>
     </section>
 
-    <!--
-    <-?php
+    <?php
     if(isset($_GET['message_send']) && $_GET['message_send'] == 1) {
         echo "<div class='p1' style='margin-top: 10px; margin-bottom: 10px; font-size: 30px'>Wiadomość została wysłana</div>";
          echo "<div class='message' id='message'>Wiadomość została wysłana</div>";
@@ -100,22 +99,29 @@ $conn->close();
     }
 
     ?>
-    -->
 
+    <h2>Skontaktuj się z nami...</h2>
+    <div class="informacje_kontaktowe">
+        <div class="informacja_kontaktowa" style="background-image: url('../static/images/hero_dashboard.jpg')">
+            <div class="informacja_ikona" style="background-image: url('../static/images/phone.svg')"></div>
+            <div class="informacja_value"></div>
+        </div>
+        <div class="informacja_kontaktowa" style="background-image: url('../static/images/hero_logowanie.jpg')">
+            <div class="informacja_ikona" style="background-image: url('../static/images/email.svg')"></div>
+            <div class="informacja_value"></div>
+        </div>
+    </div>
 
-    <!--
     <section class="form">
-        <h2>Skontaktuj się z nami</h2>
+        <h2>...lub skorzystaj z formularza</h2>
         <form action="" method="POST">
             <input type="text" id="name" name="name" required placeholder="Imię" aria-label="name">
 
             <input type="text" id="surname" name="surname" required placeholder="Nazwisko" aria-label="surname">
 
+            <input type="text" id="company_name" name="company_name" placeholder="Nazwa Firmy" aria-label="company_name">
+
             <input type="email" id="email" name="email" required placeholder="E-mail" aria-label="E-mail">
-
-            <input type="tel" id="tel" name="tel" required placeholder="Telefon" pattern="[0-9]{9}" aria-label="tel">
-
-            <input type="file" id="attachment" name="attachment">
 
             <textarea name="message" rows="4" required placeholder="Wiadomość" maxlength="600" aria-label="message_text"></textarea>
 
@@ -128,8 +134,6 @@ $conn->close();
 
         </form>
     </section>
-
-    -->
 
 
     <footer>
@@ -179,7 +183,7 @@ $conn->close();
       </div>
     </footer>
 
-<!--
+
 <script>
     setTimeout(function() {
         var message = document.getElementById('message');
@@ -195,7 +199,6 @@ $conn->close();
         }, 50);
     }, 3000);
 </script>
--->
 
 </body>
 </html>

@@ -339,75 +339,33 @@ h2 {
 
 
 
-/* SZKOLENIA */
-.szkolenia{
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    row-gap: 30px;
-    width: 80%;
-    margin: 50px auto;
-}
-
-.szkolenie{
-    text-align: center;
-    background-position: center;
-    background-size: cover;
-    display: grid;
-    width: 100%;
-    height: 200px;
-    box-sizing: border-box;
-    border: 3px solid #0b5917;
-    background-color: grey;
-
-}
-
-.szkolenie h3 {
-    padding: 10px;
-    margin: auto;
-    font-size: 60px;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #0b5917;
-}
-
-.szkolenie:hover{
-    cursor: pointer;
-    border: 10px solid #0b5917;
-    transition: all 0.2s ease;
-}
-
-
-
-/* SZKOLENIE */
-.course_info{
-    margin: auto;
-    width: 80%;
-    height: 60px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 100%;
-}
-
-.course_info p{
-    text-align: center;
-    font-size: 22px;
-    font-weight: 1200;
-}
-
-.hero2 {
-    margin-top: 60px;
-    height: 600px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-
-
-
-
 
 /* KONTAKT */
+.informacje_kontaktowe{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    width: 50%;
+    row-gap: 20px;
+    margin: 50px auto;
+    height: auto;
+
+}
+
+.informacja_kontaktowa{
+    height: auto;
+    display: grid;
+    row-gap: 15px;
+    border: 3px solid #0b5917;
+    padding: 15px;
+
+}
+
+
+
+
+
+
+
 .form {
     width: 40%;
     max-width: 600px;
@@ -491,7 +449,80 @@ h2 {
 
 
 
-/* LOGOWANIE */
+
+/* SZKOLENIA
+.szkolenia{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 30px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.szkolenie{
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border: 3px solid #0b5917;
+    background-color: grey;
+
+}
+
+.szkolenie h3 {
+    padding: 10px;
+    margin: auto;
+    font-size: 60px;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #0b5917;
+}
+
+.szkolenie:hover{
+    cursor: pointer;
+    border: 10px solid #0b5917;
+    transition: all 0.2s ease;
+}
+*/
+
+
+
+
+
+/* SZKOLENIE
+.course_info{
+    margin: auto;
+    width: 80%;
+    height: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100%;
+}
+
+.course_info p{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 1200;
+}
+
+.hero2 {
+    margin-top: 60px;
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+*/
+
+
+
+
+
+/* LOGOWANIE
 
 .login_form{
     margin: auto;
@@ -585,11 +616,13 @@ h2 {
     padding: 5px;
 }
 
+*/
 
 
 
 
-/* REJESTRACJA */
+
+/* REJESTRACJA
 
 .signup_form {
     margin: 40px auto;
@@ -677,11 +710,15 @@ h2 {
     padding: 5px;
 }
 
+*/
 
 
 
 
-/* DASHBOARD */
+
+
+
+/* DASHBOARD
 
 .dashboard_panel {
     margin: 40px auto;
@@ -815,13 +852,14 @@ h2 {
 
 }
 
+*/
 
 
 
 
 
 
-/* REZERWACJA */
+/* REZERWACJA
 .reservation_form {
     margin: 40px auto;
     display: grid;
@@ -865,13 +903,14 @@ h2 {
     transition: all 0.5s ease;
 }
 
+*/
 
 
 
 
 
 
-/* POTWIERDZENIE */
+/* POTWIERDZENIE
 
 .confirmation_form{
     display: grid;
@@ -941,6 +980,9 @@ h2 {
     background-color: #0b3517;
     transition: all 0.5s ease;
 }
+
+
+*/
 
 
 
@@ -1212,8 +1254,9 @@ footer .newsletter form {
     }
 
 
-
 }
+
+
 
 @media screen and (max-width: 828px) {
 
@@ -1271,6 +1314,8 @@ footer .newsletter form {
 
 }
 
+
+
 @media screen and (max-width: 600px) {
 
     .home_container_item{
@@ -1320,6 +1365,8 @@ footer .newsletter form {
 
 }
 
+
+
 @media screen and (max-width: 480px){
     .left_arrow{
         width: 45px;
@@ -1330,6 +1377,7 @@ footer .newsletter form {
         height: 45px;
     }
 }
+
 
 
 @media screen and (max-width: 450px){
@@ -1357,6 +1405,7 @@ footer .newsletter form {
     }
 
 }
+
 
 
 @media screen and (max-width: 380px) {
