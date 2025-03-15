@@ -102,13 +102,17 @@ $conn->close();
 
     <h2>Skontaktuj się z nami...</h2>
     <div class="informacje_kontaktowe">
-        <div class="informacja_kontaktowa" style="background-image: url('../static/images/hero_dashboard.jpg')">
-            <div class="informacja_ikona" style="background-image: url('../static/images/phone.svg')"></div>
-            <div class="informacja_value"></div>
+        <div class="informacja_kontaktowa"> <!--style="background-image: url('../static/images/hero_dashboard.jpg')"-->
+            <div class="informacja_ikona">
+                <img src="../static/images/email.svg" alt="ikona_email"/>
+            </div>
+            <div class="informacja_value"><p>23solutions@email.com</p></div>
         </div>
-        <div class="informacja_kontaktowa" style="background-image: url('../static/images/hero_logowanie.jpg')">
-            <div class="informacja_ikona" style="background-image: url('../static/images/email.svg')"></div>
-            <div class="informacja_value"></div>
+        <div class="informacja_kontaktowa"> <!--style="background-image: url('../static/images/hero_logowanie.jpg')"-->
+            <div class="informacja_ikona">
+                <img src="../static/images/phone.svg" alt="ikona_telefon"/>
+            </div>
+            <div class="informacja_value"><p>+48 111 222 333</p></div>
         </div>
     </div>
 
